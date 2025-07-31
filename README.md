@@ -1,4 +1,4 @@
-# 📚 FBCL Frontend - Friends of the Bay Community Library
+# 📚 FBCL Frontend - Friern Barnet Community Library
 
 [![Next.js](https://img.shields.io/badge/Next.js-14.2.30-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18.2.0-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
@@ -6,7 +6,7 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.5-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-A modern, responsive, and accessible frontend for the Friends of the Bay Community Library website. Built with React 18, Next.js App Router, TypeScript, and Tailwind CSS.
+A modern, responsive, and accessible frontend for the Friern Barnet Community Library website. Built with React 18, Next.js App Router, TypeScript, and Tailwind CSS.
 
 ## ✨ Features
 
@@ -54,7 +54,7 @@ A modern, responsive, and accessible frontend for the Friends of the Bay Communi
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/Turdugul/library-fbcl.git
    cd library-fbcl
    ```
 
@@ -233,9 +233,9 @@ For questions or support, please contact:
 
 <div align="center">
 
-Built with ❤️ for the Bay Community Library
+Built with ❤️ for the Friern Barnet Community Library
 
-[![GitHub stars](https://img.shields.io/github/stars/your-username/library-fbcl?style=social)](https://github.com/your-username/library-fbcl)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/library-fbcl?style=social)](https://github.com/your-username/library-fbcl)
+[![GitHub stars](https://img.shields.io/github/stars/Turdugul/library-fbcl?style=social)](https://github.com/Turdugul/library-fbcl)
+[![GitHub forks](https://img.shields.io/github/forks/Turdugul/library-fbcl?style=social)](https://github.com/Turdugul/library-fbcl)
 
 </div>
