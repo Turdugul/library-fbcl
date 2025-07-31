@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className="container-custom relative z-10">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh] sm:min-h-[90vh] py-16 sm:py-20 lg:py-24">
             <div className="animate-fade-in">
-              <div className="mb-4 sm:mb-6">
+              <div className="mb-2 sm:mb-6">
                 <span className="text-secondary-400 font-medium tracking-wide uppercase text-xs sm:text-sm bg-white/10 px-3 sm:px-4 py-2 rounded-full">
                   Established 2013
                 </span>
