@@ -4,93 +4,7 @@ import Link from 'next/link'
 import { ArrowLeft, ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { Button } from '@/components/ui'
 import { useState } from 'react'
-
-const galleryImages = [
-  {
-    id: 1,
-    src: '/libr1.jpg',
-    alt: 'Library interior with bookshelves',
-    title: 'Our Main Reading Area',
-    description: 'The heart of our library where community members gather to read and learn.'
-  },
-  {
-    id: 2,
-    src: '/libr2.jpg',
-    alt: 'Children reading corner',
-    title: 'Children\'s Corner',
-    description: 'A dedicated space for young readers to explore the world of books.'
-  },
-  {
-    id: 3,
-    src: '/libr3.jpg',
-    alt: 'Volunteers organizing books',
-    title: 'Volunteer Book Sorting',
-    description: 'Our dedicated volunteers maintaining our collection for the community.'
-  },
-  {
-    id: 4,
-    src: '/libr4.jpg',
-    alt: 'Community event space',
-    title: 'Community Events Space',
-    description: 'Where we host workshops, readings, and community gatherings.'
-  },
-  {
-    id: 5,
-    src: '/libr5.jpg',
-    alt: 'Library entrance and reception',
-    title: 'Library Reception',
-    description: 'The welcoming entrance where visitors are greeted by our friendly staff.'
-  },
-  {
-    id: 6,
-    src: '/library.jpg',
-    alt: 'Exterior view of the library',
-    title: 'Library Exterior',
-    description: 'The beautiful exterior of our community library building.'
-  },
-  {
-    id: 7,
-    src: '/libr1.jpg',
-    alt: 'Reading nook with comfortable seating',
-    title: 'Comfortable Reading Nook',
-    description: 'A cozy corner perfect for quiet reading and reflection.'
-  },
-  {
-    id: 8,
-    src: '/libr2.jpg',
-    alt: 'Study area with tables',
-    title: 'Study Area',
-    description: 'Dedicated space for students and researchers to work.'
-  },
-  {
-    id: 9,
-    src: '/libr3.jpg',
-    alt: 'Computer workstations',
-    title: 'Computer Workstations',
-    description: 'Modern technology access for digital literacy and research.'
-  },
-  {
-    id: 10,
-    src: '/libr4.jpg',
-    alt: 'Meeting room',
-    title: 'Meeting Room',
-    description: 'Versatile space for community meetings and small events.'
-  },
-  {
-    id: 11,
-    src: '/libr5.jpg',
-    alt: 'Display area for new books',
-    title: 'New Books Display',
-    description: 'Showcasing the latest additions to our collection.'
-  },
-  {
-    id: 12,
-    src: '/library.jpg',
-    alt: 'Garden area',
-    title: 'Library Garden',
-    description: 'Peaceful outdoor space for reading and community events.'
-  }
-]
+import { galleryImages } from '@/lib/data'
 
 // Lightbox Component
 function Lightbox({ image, onClose, onPrevious, onNext, hasPrevious, hasNext }: {
@@ -216,7 +130,7 @@ export default function AboutGalleryPage() {
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 flex items-end">
                     <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <h3 className="font-semibold text-secondary-300 text-sm sm:text-base mb-1">{image.title}</h3>
-                      <p className="text-xs sm:text-sm text-gray-200">{image.description}</p>
+                      <p className="text-xs sm:text-sm text-gray-200">{image.alt}</p>
                     </div>
                   </div>
                 </div>

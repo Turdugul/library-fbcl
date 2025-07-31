@@ -1,117 +1,14 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Calendar, Clock, MapPin, Users, ArrowRight, Star, Quote } from 'lucide-react'
-import { Button, Card, Input } from '@/components/ui'
+import { Button, Card, Input, Gallery } from '@/components/ui'
+import { upcomingEvents, pastEvents, eventsGalleryImages } from '@/lib/data'
 
 export const metadata: Metadata = {
   title: 'Events',
   description: 'Discover upcoming events and programs at the Friern Barnet Community Library. From story time to author readings, there\'s something for everyone.',
 }
 
-const upcomingEvents = [
-  {
-    id: 1,
-    title: 'Summer Reading Program Kickoff',
-    date: 'June 15, 2024',
-    time: '10:00 AM - 12:00 PM',
-    location: 'Main Library Hall',
-    description: 'Join us for the start of our annual summer reading challenge! Activities for all ages, including crafts, games, and book giveaways.',
-    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop',
-    category: 'Reading Program',
-    attendees: 45,
-    rating: 5,
-  },
-  {
-    id: 2,
-    title: 'Author Meet & Greet',
-    date: 'July 8, 2024',
-    time: '2:00 PM - 4:00 PM',
-    location: 'Community Room',
-    description: 'Meet local author Sarah Johnson and discuss her latest novel "The Bay Chronicles". Book signing and Q&A session included.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
-    category: 'Author Event',
-    attendees: 30,
-    rating: 5,
-  },
-  {
-    id: 3,
-    title: 'Children\'s Story Time',
-    date: 'Every Saturday',
-    time: '11:00 AM - 11:30 AM',
-    location: 'Children\'s Section',
-    description: 'Interactive story time for children ages 3-8. Songs, crafts, and fun activities included.',
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-    category: 'Children',
-    attendees: 20,
-    rating: 5,
-  },
-  {
-    id: 4,
-    title: 'Book Club: "The Midnight Library"',
-    date: 'July 22, 2024',
-    time: '6:30 PM - 8:00 PM',
-    location: 'Reading Room',
-    description: 'Join our monthly book club discussion of Matt Haig\'s "The Midnight Library". New members welcome!',
-    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=400&h=300&fit=crop',
-    category: 'Book Club',
-    attendees: 15,
-    rating: 5,
-  },
-  {
-    id: 5,
-    title: 'Digital Literacy Workshop',
-    date: 'August 5, 2024',
-    time: '1:00 PM - 3:00 PM',
-    location: 'Computer Lab',
-    description: 'Learn essential computer skills for beginners. Topics include email, internet safety, and basic word processing.',
-    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop',
-    category: 'Workshop',
-    attendees: 12,
-    rating: 5,
-  },
-  {
-    id: 6,
-    title: 'Teen Writing Workshop',
-    date: 'August 12, 2024',
-    time: '4:00 PM - 6:00 PM',
-    location: 'Teen Space',
-    description: 'Creative writing workshop for teens ages 13-18. Explore different genres and share your work with peers.',
-    image: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?w=400&h=300&fit=crop',
-    category: 'Teen Program',
-    attendees: 18,
-    rating: 5,
-  },
-]
-
-const pastEvents = [
-  {
-    id: 7,
-    title: 'Spring Book Sale',
-    date: 'May 20, 2024',
-    description: 'Our annual spring book sale was a huge success! We raised over $2,000 for library programs.',
-    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop',
-    attendees: 150,
-    rating: 5,
-  },
-  {
-    id: 8,
-    title: 'Poetry Night',
-    date: 'April 15, 2024',
-    description: 'Local poets shared their work in an intimate evening of poetry and community.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
-    attendees: 35,
-    rating: 5,
-  },
-  {
-    id: 9,
-    title: 'Family Game Night',
-    date: 'March 30, 2024',
-    description: 'Families enjoyed an evening of board games, puzzles, and friendly competition.',
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-    attendees: 60,
-    rating: 5,
-  },
-]
 
 const featuredEvent = {
   title: "Community Reading Festival",
@@ -381,52 +278,16 @@ export default function EventsPage() {
       {/* Events Gallery */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-bold mb-4">
-              Events Gallery
-            </h2>
-            <p className="text-responsive-lg text-gray-600 max-w-2xl mx-auto">
-              Browse through photos of our community events, workshops, and activities that bring our library to life.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 sm:gap-6">
-            {[
-              { src: '/libr1.jpg', alt: 'Summer reading program event', title: 'Summer Reading Program' },
-              { src: '/libr2.jpg', alt: 'Author meet and greet event', title: 'Author Meet & Greet' },
-              { src: '/libr3.jpg', alt: 'Children story time session', title: 'Children\'s Story Time' },
-              { src: '/libr4.jpg', alt: 'Book club meeting', title: 'Adult Book Club' },
-              { src: '/libr5.jpg', alt: 'Computer literacy workshop', title: 'Computer Workshop' },
-              { src: '/library.jpg', alt: 'Community volunteer day', title: 'Volunteer Day' }
-            ].map((image, index) => (
-              <div
-                key={index}
-                className="group cursor-pointer animate-fade-in hover-lift"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="relative overflow-hidden rounded-lg shadow-lg">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-32 sm:h-40 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 flex items-end">
-                    <div className="p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <h3 className="font-semibold text-secondary-300 text-xs sm:text-sm">{image.title}</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-8 sm:mt-10 animate-fade-in stagger-2">
-            <Button variant="outline" asChild>
-              <Link href="/events/gallery">
-                View Full Gallery
-              </Link>
-            </Button>
-          </div>
+          <Gallery
+            images={eventsGalleryImages}
+            title="Events Gallery"
+            description="Browse through photos from our recent events and community gatherings."
+            columns={3}
+            showTitles={true}
+            showDescriptions={true}
+            showLightbox={true}
+            className="animate-fade-in"
+          />
         </div>
       </section>
 

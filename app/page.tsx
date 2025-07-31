@@ -1,209 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, Users, BookOpen, Heart, Calendar, MapPin, Clock, Phone, ChevronRight, ChevronLeft, Award } from 'lucide-react'
-import { Button, Card } from '@/components/ui'
-import { useState } from 'react'
-
-const stats = [
-  { number: '500+', label: 'Books Donated', icon: BookOpen },
-  { number: '50+', label: 'Active Volunteers', icon: Users },
-  { number: '1000+', label: 'Community Members', icon: Heart },
-  { number: '25+', label: 'Events Per Year', icon: Calendar },
-]
-
-const featuredEvents = [
-  {
-    title: 'Summer Reading Program',
-    date: 'June 15, 2024',
-    time: '10:00 AM',
-    description: 'Join us for our annual summer reading challenge for all ages.',
-    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop',
-  },
-  {
-    title: 'Author Meet & Greet',
-    date: 'July 8, 2024',
-    time: '2:00 PM',
-    description: 'Meet local author Sarah Johnson and discuss her latest novel.',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop',
-  },
-  {
-    title: 'Children\'s Story Time',
-    date: 'Every Saturday',
-    time: '11:00 AM',
-    description: 'Interactive story time for children ages 3-8.',
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop',
-  },
-]
-
-const testimonials = [
-  {
-    quote: "The library has become a second home for my children. The volunteers are amazing!",
-    author: "Maria Rodriguez",
-    role: "Parent"
-  },
-  {
-    quote: "I've been volunteering here for 5 years and it's the most rewarding experience.",
-    author: "John Smith",
-    role: "Volunteer"
-  },
-  {
-    quote: "The programs they offer have helped my reading skills improve dramatically.",
-    author: "Emma Thompson",
-    role: "Student"
-  }
-]
-
-const quickLinks = [
-  { title: 'Join Us', description: 'Become a member and support our community library', href: '/volunteer', icon: Users },
-  { title: 'Catalogue', description: 'Explore our diverse collection of books and resources', href: '/catalogue', icon: BookOpen },
-  { title: 'Events', description: 'Discover upcoming events and activities', href: '/events', icon: Calendar },
-  { title: 'Contact', description: 'Get in touch with our team', href: '/contact', icon: Phone },
-]
-
-const activities = [
-  { name: 'Computer Classes', icon: '💻', description: 'Learn essential computer skills' },
-  { name: 'Pilates', icon: '🧘', description: 'Improve flexibility and strength' },
-  { name: 'Yoga', icon: '🧘‍♀️', description: 'Find your inner peace and balance' },
-  { name: 'English Lessons', icon: '📚', description: 'Master the English language' },
-  { name: 'Toddler Groups', icon: '👶', description: 'Early development activities' },
-  { name: 'Drama Acting Groups', icon: '🎭', description: 'Express yourself through theater' },
-  { name: 'Local Police Surgery', icon: '👮', description: 'Community safety discussions' },
-  { name: 'Creative Writing', icon: '✍️', description: 'Unleash your creativity' },
-  { name: 'Councillors Surgery', icon: '🏛️', description: 'Local government access' },
-  { name: 'Many More Workshops', icon: '🎨', description: 'Explore various creative outlets' },
-  { name: 'Classes & Events', icon: '📅', description: 'Regular community activities' },
-  { name: 'Community Activities', icon: '🤝', description: 'Build lasting connections' }
-]
-
-const galleryImages = [
-  {
-    id: 1,
-    src: '/libr1.jpg',
-    alt: 'Library interior with bookshelves',
-    title: 'Our Main Reading Area'
-  },
-  {
-    id: 2,
-    src: '/libr2.jpg',
-    alt: 'Children reading corner',
-    title: 'Children\'s Corner'
-  },
-  {
-    id: 3,
-    src: '/libr3.jpg',
-    alt: 'Volunteers organizing books',
-    title: 'Volunteer Book Sorting'
-  },
-  {
-    id: 4,
-    src: '/libr4.jpg',
-    alt: 'Community event space',
-    title: 'Community Events Space'
-  },
-  {
-    id: 5,
-    src: '/libr5.jpg',
-    alt: 'Library entrance and reception',
-    title: 'Library Reception'
-  },
-  {
-    id: 6,
-    src: '/library.jpg',
-    alt: 'Exterior view of the library',
-    title: 'Library Exterior'
-  }
-]
-
-const awards = [
-  {
-    id: 1,
-    title: 'Community Library of the Year',
-    date: '2023',
-    image: '/libr1.jpg',
-    certificate: '/libr2.jpg',
-    description: 'Awarded for outstanding community engagement and literacy programs that have made a significant impact on local residents.'
-  },
-  {
-    id: 2,
-    title: 'Volunteer Excellence Award',
-    date: '2022',
-    image: '/libr3.jpg',
-    certificate: null,
-    description: 'Recognized for exceptional volunteer management and the positive impact our volunteer team has on the community.'
-  },
-  {
-    id: 3,
-    title: 'Innovation in Literacy Award',
-    date: '2021',
-    image: '/libr4.jpg',
-    certificate: '/libr5.jpg',
-    description: 'Honored for innovative approaches to promoting literacy and lifelong learning in our diverse community.'
-  }
-]
-
-// Gallery Carousel Component
-function GalleryCarousel({ images }: { images: any[] }) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-  }
-
-  return (
-    <div className="relative w-full">
-      <div className="overflow-hidden rounded-xl shadow-lg">
-        <div className="relative h-64 sm:h-80 md:h-96">
-          <img
-            src={images[currentIndex].src}
-            alt={images[currentIndex].alt}
-            className="w-full h-full object-cover transition-transform duration-500"
-          />
-          <div className="absolute inset-0 bg-black/30 flex items-end">
-            <div className="p-4 sm:p-6 text-white">
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">{images[currentIndex].title}</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Navigation Buttons */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary-500"
-        aria-label="Previous image"
-      >
-        <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
-      </button>
-      
-      <button
-        onClick={nextSlide}
-        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary-500"
-        aria-label="Next image"
-      >
-        <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
-      </button>
-      
-      {/* Dots Indicator */}
-      <div className="flex justify-center mt-4 space-x-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-              index === currentIndex ? 'bg-secondary-500' : 'bg-gray-300 hover:bg-gray-400'
-            }`}
-            aria-label={`Go to image ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  )
-}
+import Image from 'next/image'
+import { ArrowRight, MapPin, Clock, Phone, ChevronRight, Award } from 'lucide-react'
+import { Button, Card, Carousel, Gallery } from '@/components/ui'
+import { stats, featuredEvents, testimonials, quickLinks, activities, galleryImages, awards, homeGalleryImages } from '@/lib/data'
 
 export default function HomePage() {
   return (
@@ -242,18 +43,22 @@ export default function HomePage() {
               </div>
             </div>
             <div className="relative animate-fade-in stagger-1">
-              <div className="relative">
-                <img
-                  src="/library.jpg"
-                  alt="Community library"
-                  className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] object-cover shadow-2xl rounded-lg"
-                />
-                <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 bg-white text-primary-800 p-4 sm:p-6 border border-gray-200 shadow-lg rounded-lg">
-                  <p className="text-xs sm:text-sm font-elegant-heading mb-1">Since 2013</p>
-                  <p className="text-xs text-secondary-dark font-elegant-body">Serving our community</p>
-                </div>
-              </div>
-            </div>
+  <div className="relative">
+    <Image
+      src="/library.jpg"
+      alt="Exterior view of the community library"
+      className="object-cover rounded-lg"
+      width={800}
+      height={600}
+      priority
+    />
+    <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 bg-white text-primary-800 p-4 sm:p-6 border border-gray-200 shadow-lg rounded-lg">
+      <p className="text-xs sm:text-sm font-elegant-heading mb-1">Since 2013</p>
+      <p className="text-xs text-secondary-dark font-elegant-body">Serving our community</p>
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
       </section>
@@ -477,22 +282,19 @@ export default function HomePage() {
       {/* Gallery Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
-              Our Library Gallery
-            </h2>
-            <p className="text-responsive-lg text-secondary-dark max-w-3xl mx-auto font-elegant-body">
-              Take a virtual tour of our community library and see the spaces where learning and community come together.
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <GalleryCarousel images={galleryImages} />
-          </div>
+          <Gallery
+            images={homeGalleryImages}
+            title="Our Library Gallery"
+            description="Take a virtual tour of our community library and see the spaces where learning and community come together."
+            columns={3}
+            showTitles={true}
+            showDescriptions={true}
+            className="animate-fade-in"
+          />
           
           <div className="text-center mt-8 sm:mt-10 animate-fade-in stagger-2">
             <Button variant="outline" asChild className="font-elegant-body">
-              <Link href="/events/gallery">
+              <Link href="/about/gallery">
                 More Pictures
               </Link>
             </Button>

@@ -2,242 +2,9 @@
 
 import Link from 'next/link'
 import { Calendar, Users, BookOpen, Heart, Award, Target, ChevronLeft, ChevronRight, Mail, Linkedin, Globe } from 'lucide-react'
-import { Button, Card } from '@/components/ui'
+import { Button, Card, Carousel, Gallery } from '@/components/ui'
 import { useState } from 'react'
-
-const timeline = [
-  {
-    year: '2013',
-    title: 'Foundation',
-    description: 'FBCL was founded by a group of passionate community members who recognized the need for library support.',
-  },
-  {
-    year: '2023',
-    title: '10th Anniversary',
-    description: 'Celebrated 10 years of service with a community-wide celebration and new programs.',
-  },
-  {
-    year: '2025',
-    title: 'Future Forward',
-    description: 'Expanding programs to meet the evolving needs of our diverse community.',
-  },
-]
-
-const values = [
-  {
-    icon: BookOpen,
-    title: 'Literacy First',
-    description: 'We believe everyone deserves access to knowledge and the joy of reading.',
-  },
-  {
-    icon: Users,
-    title: 'Community Centered',
-    description: 'Our programs and services are designed with our community\'s needs in mind.',
-  },
-  {
-    icon: Heart,
-    title: 'Inclusive Access',
-    description: 'We work to ensure our library serves people of all ages, backgrounds, and abilities.',
-  },
-  {
-    icon: Target,
-    title: 'Sustainable Impact',
-    description: 'We focus on long-term solutions that create lasting positive change.',
-  },
-]
-
-const impactStats = [
-  { number: '500+', label: 'Books Donated Annually', icon: BookOpen },
-  { number: '50+', label: 'Active Volunteers', icon: Users },
-  { number: '1000+', label: 'Community Members Served', icon: Heart },
-  { number: '25+', label: 'Events Per Year', icon: Calendar },
-  { number: '15+', label: 'Years of Service', icon: Award },
-  { number: '95%', label: 'Community Satisfaction', icon: Target },
-]
-
-const galleryImages = [
-  {
-    id: 1,
-    src: '/libr1.jpg',
-    alt: 'Library interior with bookshelves',
-    title: 'Our Main Reading Area'
-  },
-  {
-    id: 2,
-    src: '/libr2.jpg',
-    alt: 'Children reading corner',
-    title: 'Children\'s Corner'
-  },
-  {
-    id: 3,
-    src: '/libr3.jpg',
-    alt: 'Volunteers organizing books',
-    title: 'Volunteer Book Sorting'
-  },
-  {
-    id: 4,
-    src: '/libr4.jpg',
-    alt: 'Community event space',
-    title: 'Community Events Space'
-  },
-  {
-    id: 5,
-    src: '/libr5.jpg',
-    alt: 'Library entrance and reception',
-    title: 'Library Reception'
-  },
-  {
-    id: 6,
-    src: '/library.jpg',
-    alt: 'Exterior view of the library',
-    title: 'Library Exterior'
-  }
-]
-
-const awards = [
-  {
-    id: 1,
-    title: 'Community Library of the Year',
-    date: '2023',
-    image: '/libr1.jpg',
-    certificate: '/libr2.jpg',
-    description: 'Awarded for outstanding community engagement and literacy programs that have made a significant impact on local residents.'
-  },
-  {
-    id: 2,
-    title: 'Volunteer Excellence Award',
-    date: '2022',
-    image: '/libr3.jpg',
-    certificate: null,
-    description: 'Recognized for exceptional volunteer management and the positive impact our volunteer team has on the community.'
-  },
-  {
-    id: 3,
-    title: 'Innovation in Literacy Award',
-    date: '2021',
-    image: '/libr4.jpg',
-    certificate: '/libr5.jpg',
-    description: 'Honored for innovative approaches to promoting literacy and lifelong learning in our diverse community.'
-  },
-  {
-    id: 4,
-    title: 'Community Partnership Award',
-    date: '2020',
-    image: '/library.jpg',
-    certificate: null,
-    description: 'Awarded for successful partnerships with local schools, organizations, and community groups.'
-  }
-]
-
-const trustees = [
-  {
-    id: 1,
-    name: "Dr. Sarah Johnson",
-    role: "Board President",
-    bio: "Dr. Johnson has been a passionate advocate for literacy and education for over 20 years. She holds a PhD in Education and has dedicated her career to improving access to learning resources in underserved communities.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
-    email: "sarah.johnson@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2020-2024"
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "Vice President",
-    bio: "Michael brings 15 years of experience in nonprofit management and community development. He has successfully led numerous fundraising campaigns and volunteer recruitment initiatives.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-    email: "michael.chen@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2021-2025"
-  },
-  {
-    id: 3,
-    name: "Emily Rodriguez",
-    role: "Secretary",
-    bio: "Emily is a former librarian with a deep understanding of community needs. She has been instrumental in developing our children's programs and digital literacy initiatives.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-    email: "emily.rodriguez@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2022-2026"
-  },
-  {
-    id: 4,
-    name: "David Thompson",
-    role: "Treasurer",
-    bio: "David is a certified public accountant with extensive experience in nonprofit financial management. He ensures our organization maintains the highest standards of fiscal responsibility.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-    email: "david.thompson@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2020-2024"
-  }
-]
-
-// Gallery Carousel Component
-function GalleryCarousel({ images }: { images: any[] }) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length)
-  }
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length)
-  }
-
-  return (
-    <div className="relative w-full">
-      <div className="overflow-hidden rounded-xl shadow-lg">
-        <div className="relative h-64 sm:h-80 md:h-96">
-          <img
-            src={images[currentIndex].src}
-            alt={images[currentIndex].alt}
-            className="w-full h-full object-cover transition-transform duration-500"
-          />
-          <div className="absolute inset-0 bg-black/30 flex items-end">
-            <div className="p-4 sm:p-6 text-white">
-              <h3 className="text-lg sm:text-xl font-semibold mb-2">{images[currentIndex].title}</h3>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Navigation Buttons */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary-500"
-        aria-label="Previous image"
-      >
-        <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
-      </button>
-      
-      <button
-        onClick={nextSlide}
-        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-800 p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary-500"
-        aria-label="Next image"
-      >
-        <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
-      </button>
-      
-      {/* Dots Indicator */}
-      <div className="flex justify-center mt-4 space-x-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 ${
-              index === currentIndex ? 'bg-secondary-500' : 'bg-gray-300 hover:bg-gray-400'
-            }`}
-            aria-label={`Go to image ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
-  )
-}
+import { timeline, values, impactStats, galleryImages, awards, trustees, aboutGalleryImages } from '@/lib/data'
 
 export default function AboutPage() {
   return (
@@ -416,21 +183,19 @@ export default function AboutPage() {
       {/* Gallery Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-bold mb-4">
-              Our Library Gallery
-            </h2>
-            <p className="text-responsive-lg text-gray-600 max-w-2xl mx-auto">
-              Take a virtual tour of our community library and see the spaces where learning and community come together.
-            </p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <GalleryCarousel images={galleryImages} />
-          </div>
+          <Gallery
+            images={aboutGalleryImages}
+            title="Our Library Gallery"
+            description="Take a virtual tour of our community library and see the spaces where learning and community come together."
+            columns={3}
+            showTitles={true}
+            showDescriptions={true}
+            showLightbox={true}
+            className="animate-fade-in"
+          />
           
           <div className="text-center mt-8 sm:mt-10 animate-fade-in stagger-2">
-            <Button variant="outline" asChild>
+            <Button variant="outline" asChild className="font-elegant-body">
               <Link href="/about/gallery">
                 More Pictures
               </Link>
