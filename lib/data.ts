@@ -201,47 +201,91 @@ export const impactStats = [
 export const trustees = [
   {
     id: 1,
-    name: 'Dr. Sarah Johnson',
-    role: 'Board President',
-    image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face',
-    bio: 'Dr. Johnson has been a passionate advocate for literacy and education for over 20 years. She holds a PhD in Education and has dedicated her career to improving access to learning resources in underserved communities.',
-    email: 'sarah.johnson@fbcl.org',
-    linkedin: 'https://linkedin.com/in/sarahjohnson',
-    website: 'https://fbcl.org',
-    term: '2020-2024'
+    name: "Dr. Sarah Johnson",
+    role: "Board President",
+    bio: "Dr. Johnson has been a passionate advocate for literacy and education for over 20 years. She holds a PhD in Education and has dedicated her career to improving access to learning resources in underserved communities.",
+    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
+    email: "sarah.johnson@fbcl.org",
+    linkedin: "#",
+    website: "#",
+    term: "2020-2024"
   },
   {
     id: 2,
-    name: 'Michael Chen',
-    role: 'Vice President',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
-    bio: 'Michael brings 15 years of experience in nonprofit management and community development. He has successfully led numerous fundraising campaigns and volunteer recruitment initiatives.',
-    email: 'michael.chen@fbcl.org',
-    linkedin: 'https://linkedin.com/in/michaelchen',
-    website: 'https://fbcl.org',
-    term: '2021-2025'
+    name: "Michael Chen",
+    role: "Vice President",
+    bio: "Michael brings 15 years of experience in nonprofit management and community development. He has successfully led numerous fundraising campaigns and volunteer recruitment initiatives.",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
+    email: "michael.chen@fbcl.org",
+    linkedin: "#",
+    website: "#",
+    term: "2021-2025"
   },
   {
     id: 3,
-    name: 'Emily Rodriguez',
-    role: 'Secretary',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face',
-    bio: 'Emily is a former librarian with a deep understanding of community needs. She has been instrumental in developing our children\'s programs and digital literacy initiatives.',
-    email: 'emily.rodriguez@fbcl.org',
-    linkedin: 'https://linkedin.com/in/emilyrodriguez',
-    website: 'https://fbcl.org',
-    term: '2022-2026'
+    name: "Emily Rodriguez",
+    role: "Secretary",
+    bio: "Emily is a former librarian with a deep understanding of community needs. She has been instrumental in developing our children's programs and digital literacy initiatives.",
+    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
+    email: "emily.rodriguez@fbcl.org",
+    linkedin: "#",
+    website: "#",
+    term: "2022-2026"
   },
   {
     id: 4,
-    name: 'David Thompson',
-    role: 'Treasurer',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face',
-    bio: 'David is a certified public accountant with extensive experience in nonprofit financial management. He ensures our organization maintains the highest standards of fiscal responsibility.',
-    email: 'david.thompson@fbcl.org',
-    linkedin: 'https://linkedin.com/in/davidthompson',
-    website: 'https://fbcl.org',
-    term: '2020-2024'
+    name: "David Thompson",
+    role: "Treasurer",
+    bio: "David is a certified public accountant with extensive experience in nonprofit financial management. He ensures our organization maintains the highest standards of fiscal responsibility.",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
+    email: "david.thompson@fbcl.org",
+    linkedin: "#",
+    website: "#",
+    term: "2020-2024"
+  },
+  {
+    id: 5,
+    name: "Lisa Park",
+    role: "Trustee",
+    bio: "Lisa is a community organizer and former teacher who has been involved with FBCL for over a decade. She specializes in outreach programs and community partnerships.",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&crop=face",
+    email: "lisa.park@fbcl.org",
+    linkedin: "#",
+    website: "#",
+    term: "2021-2025"
+  },
+  {
+    id: 6,
+    name: "Robert Martinez",
+    role: "Trustee",
+    bio: "Robert is a retired business executive who brings strategic planning expertise to our board. He has been instrumental in developing our long-term vision and growth strategies.",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face",
+    email: "robert.martinez@fbcl.org",
+    linkedin: "#",
+    website: "#",
+    term: "2022-2026"
+  },
+  {
+    id: 7,
+    name: "Jennifer Adams",
+    role: "Trustee",
+    bio: "Jennifer is a local author and literacy advocate who has published several children's books. She leads our author outreach and writing workshop programs.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face",
+    email: "jennifer.adams@fbcl.org",
+    linkedin: "#",
+    website: "#",
+    term: "2023-2027"
+  },
+  {
+    id: 8,
+    name: "James Wilson",
+    role: "Trustee",
+    bio: "James is a technology consultant who has helped modernize our library's digital infrastructure. He oversees our technology initiatives and digital literacy programs.",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face",
+    email: "james.wilson@fbcl.org",
+    linkedin: "#",
+    website: "#",
+    term: "2023-2027"
   }
 ]
 

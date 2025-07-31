@@ -22,7 +22,7 @@ const quickLinks = [
 const socialLinks = [
   { name: 'Facebook', href: '#', icon: Facebook },
   { name: 'Twitter', href: '#', icon: Twitter },
-  { name: 'Instagram', href: '#', icon: Instagram },
+  { name: 'Instagram', href: 'https://www.instagram.com/friern_barnet_community_lib/', icon: Instagram },
 ]
 
 export default function Footer() {

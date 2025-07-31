@@ -2,102 +2,13 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Mail, Linkedin, Globe, ArrowLeft } from 'lucide-react'
 import { Button, Card } from '@/components/ui'
+import { trustees } from '@/lib/data'
+import { clearCache } from '../../../lib/api';
 
 export const metadata: Metadata = {
   title: 'Trustees',
   description: 'Meet the dedicated trustees who guide the Friends of the Friern Barnet Community Library in our mission to support literacy and community engagement.',
 }
-
-const trustees = [
-  {
-    id: 1,
-    name: "Dr. Sarah Johnson",
-    role: "Board President",
-    bio: "Dr. Johnson has been a passionate advocate for literacy and education for over 20 years. She holds a PhD in Education and has dedicated her career to improving access to learning resources in underserved communities.",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face",
-    email: "sarah.johnson@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2020-2024"
-  },
-  {
-    id: 2,
-    name: "Michael Chen",
-    role: "Vice President",
-    bio: "Michael brings 15 years of experience in nonprofit management and community development. He has successfully led numerous fundraising campaigns and volunteer recruitment initiatives.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face",
-    email: "michael.chen@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2021-2025"
-  },
-  {
-    id: 3,
-    name: "Emily Rodriguez",
-    role: "Secretary",
-    bio: "Emily is a former librarian with a deep understanding of community needs. She has been instrumental in developing our children's programs and digital literacy initiatives.",
-    image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face",
-    email: "emily.rodriguez@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2022-2026"
-  },
-  {
-    id: 4,
-    name: "David Thompson",
-    role: "Treasurer",
-    bio: "David is a certified public accountant with extensive experience in nonprofit financial management. He ensures our organization maintains the highest standards of fiscal responsibility.",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=300&h=300&fit=crop&crop=face",
-    email: "david.thompson@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2020-2024"
-  },
-  {
-    id: 5,
-    name: "Lisa Park",
-    role: "Trustee",
-    bio: "Lisa is a community organizer and former teacher who has been involved with FBCL for over a decade. She specializes in outreach programs and community partnerships.",
-    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&h=300&fit=crop&crop=face",
-    email: "lisa.park@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2021-2025"
-  },
-  {
-    id: 6,
-    name: "Robert Martinez",
-    role: "Trustee",
-    bio: "Robert is a retired business executive who brings strategic planning expertise to our board. He has been instrumental in developing our long-term vision and growth strategies.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&h=300&fit=crop&crop=face",
-    email: "robert.martinez@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2022-2026"
-  },
-  {
-    id: 7,
-    name: "Jennifer Adams",
-    role: "Trustee",
-    bio: "Jennifer is a local author and literacy advocate who has published several children's books. She leads our author outreach and writing workshop programs.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&h=300&fit=crop&crop=face",
-    email: "jennifer.adams@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2023-2027"
-  },
-  {
-    id: 8,
-    name: "James Wilson",
-    role: "Trustee",
-    bio: "James is a technology consultant who has helped modernize our library's digital infrastructure. He oversees our technology initiatives and digital literacy programs.",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&h=300&fit=crop&crop=face",
-    email: "james.wilson@fbcl.org",
-    linkedin: "#",
-    website: "#",
-    term: "2023-2027"
-  }
-]
 
 export default function TrusteesPage() {
   return (
@@ -125,7 +36,7 @@ export default function TrusteesPage() {
               in our mission to support literacy and community engagement.
             </p>
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mt-8">
-              <h2 className="text-2xl font-bold mb-4">Trustee Group</h2>
+              <h2 className="text-2xl  text-secondary-400 font-bold mb-4">Trustee Group</h2>
               <p className="text-gray-100 mb-4">
                 Note: The trustee list below may not be fully up-to-date. For the most current list of Trustees, 
                 please visit the Charity Commission website or contact us by email.
@@ -156,11 +67,11 @@ export default function TrusteesPage() {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {trustees.map((trustee, index) => (
               <Card
                 key={trustee.id}
-                className="text-center group animate-fade-in hover-lift"
+                className=" p-4 text-center group animate-fade-in hover-lift"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative mb-6">
@@ -250,7 +161,7 @@ export default function TrusteesPage() {
               </div>
             </div>
             <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <Card>
+              <Card className='p-4'>
                 <h3 className="text-2xl font-bold mb-4">Board Responsibilities</h3>
                 <ul className="space-y-3 text-gray-600">
                   <li className="flex items-start space-x-3">

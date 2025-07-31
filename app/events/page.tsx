@@ -288,6 +288,13 @@ export default function EventsPage() {
             showLightbox={true}
             className="animate-fade-in"
           />
+           <div className="text-center mt-8 sm:mt-10 animate-fade-in stagger-2">
+            <Button variant="outline" asChild className="font-elegant-body">
+              <Link href="/events/gallery">
+                More Pictures
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 

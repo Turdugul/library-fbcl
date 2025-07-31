@@ -1,16 +1,20 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
-  size?: 'sm' | 'md' | 'lg'
-  asChild?: boolean
-  children: React.ReactNode
-}
+import { ButtonProps } from '@/types'
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant = 'primary', size = 'md', asChild = false, children, ...props }, ref) => {
-    const baseClasses = 'inline-flex items-center justify-center font-medium rounded-none transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed font-elegant-body relative overflow-hidden group'
+  ({ 
+    className, 
+    variant = 'primary', 
+    size = 'md', 
+    asChild = false, 
+    children, 
+    disabled = false,
+    type = 'button',
+    onClick,
+    ...props 
+  }, ref) => {
+    const baseClasses = 'inline-flex items-center justify-center font-medium rounded-none transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed font-elegant-body relative overflow-hidden group focus-visible'
     
     const variants = {
       primary: 'bg-primary-800 hover:bg-primary-900 text-white focus:ring-primary-500 border border-primary-800 hover:border-primary-900 transform hover:scale-105 active:scale-95 shadow-sm hover:shadow-md',
@@ -25,35 +29,42 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       lg: 'px-8 py-4 text-lg'
     }
     
+    const buttonProps = {
+      className: cn(
+        baseClasses,
+        !className?.includes('btn-') ? variants[variant] : '',
+        sizes[size],
+        className
+      ),
+      ref,
+      disabled,
+      type,
+      onClick,
+      'aria-disabled': disabled,
+      ...props
+    }
+    
     if (asChild) {
       const child = React.Children.only(children) as React.ReactElement
       return React.cloneElement(child, {
+        ...buttonProps,
         className: cn(
           baseClasses,
-          // Only apply variant styles if no custom className is provided
           !className?.includes('btn-') ? variants[variant] : '',
           sizes[size],
-          className, // Custom className takes priority
+          className,
           child.props.className
         ),
-        ...props
       })
     }
     
     return (
-      <button
-        className={cn(
-          baseClasses,
-          // Only apply variant styles if no custom className is provided
-          !className?.includes('btn-') ? variants[variant] : '',
-          sizes[size],
-          className // Custom className takes priority
-        )}
-        ref={ref}
-        {...props}
-      >
+      <button {...buttonProps}>
         <span className="relative z-10">{children}</span>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+        <div 
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"
+          aria-hidden="true"
+        />
       </button>
     )
   }

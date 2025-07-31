@@ -314,7 +314,7 @@ export default function AboutPage() {
           
           <div className="text-center mt-10 sm:mt-12 animate-fade-in stagger-3">
             <Button asChild variant="outline">
-              <Link href="/trustees">
+              <Link href="about/trustees">
                 View All Trustees
               </Link>
             </Button>

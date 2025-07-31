@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer'
 import ScrollToTop from '@/components/ui/ScrollToTop'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://fbcl.org'),
   title: {
     default: 'Friern Barnet Community Library',
     template: '%s | FBCL'
@@ -40,7 +41,6 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://fbcl.org'),
   alternates: {
     canonical: '/',
   },
@@ -132,8 +132,8 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+  maximumScale: 5,
+  userScalable: true,
   colorScheme: 'light dark',
   themeColor: [
     { media: '(prefers-color-scheme: light)', color: '#ffffff' },
@@ -149,6 +149,12 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className="scroll-smooth">
       <head>
+        {/* Preconnect to external domains for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -223,16 +229,39 @@ export default function RootLayout({
           }}
         />
         
-        {/* Performance Meta Tags */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        {/* Additional structured data for organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Friends of the Friern Barnet Community Library",
+              "url": "https://fbcl.org",
+              "logo": "https://fbcl.org/logo.png",
+              "description": "Supporting literacy and community engagement through the Friern Barnet Community Library",
+              "foundingDate": "2013",
+              "numberOfEmployees": "50+",
+              "location": {
+                "@type": "Place",
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": "Friern Barnet Rd",
+                  "addressLocality": "London",
+                  "postalCode": "N11 3DS",
+                  "addressCountry": "GB"
+                }
+              }
+            })
+          }}
+        />
       </head>
       <body className="font-body antialiased">
+        {/* Skip to main content link for accessibility */}
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
+        
         <div className="min-h-screen flex flex-col">
           <Header />
           <main id="main-content" className="flex-grow">

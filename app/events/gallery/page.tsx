@@ -95,9 +95,9 @@ export default function AboutGalleryPage() {
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
             <div className="mb-6">
-              <Link href="/about" className="inline-flex items-center text-secondary-300 hover:text-white transition-colors mb-4">
+              <Link href="/events" className="inline-flex items-center text-secondary-300 hover:text-white transition-colors mb-4">
                 <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to About
+                Back to Events
               </Link>
             </div>
             <h1 className="text-responsive-3xl md:text-responsive-6xl  text-secondary-400  font-bold mb-4 sm:mb-6">
@@ -141,9 +141,9 @@ export default function AboutGalleryPage() {
           {/* Back to About button */}
           <div className="text-center mt-12 sm:mt-16 animate-fade-in stagger-3">
             <Button variant="outline" asChild>
-              <Link href="/about">
+              <Link href="/events">
                 <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to About
+                Back to Events
               </Link>
             </Button>
           </div>

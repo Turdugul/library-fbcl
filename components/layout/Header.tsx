@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, BookOpen } from 'lucide-react'
+import { NavigationItem } from '@/types'
 
-const navigation = [
+const navigation: NavigationItem[] = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
   { name: 'Catalogue', href: '/catalogue' },
@@ -25,12 +26,32 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10)
     }
+    
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setIsOpen(false)
+      }
+    }
+    
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   const isActive = (href: string) =>
     pathname === href || (href !== '/' && pathname.startsWith(href))
+
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen)
+  }
+
+  const handleMenuClose = () => {
+    setIsOpen(false)
+  }
 
   return (
     <header
@@ -39,17 +60,23 @@ export default function Header() {
           ? 'bg-white/95 shadow-sm backdrop-blur-md border-b border-gray-200'
           : 'bg-white/90 backdrop-blur-sm'
       }`}
+      role="banner"
     >
-      <nav className="container-custom">
-        <div className="flex items-center justify-between h-20 md:h-24">
+      <nav className="container-custom" role="navigation" aria-label="Main navigation">
+        <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3 group">
+          <Link 
+            href="/" 
+            className="flex items-center space-x-2 sm:space-x-3 group focus-visible"
+            onClick={handleMenuClose}
+            aria-label="Go to homepage"
+          >
             <div className="relative">
-              <BookOpen className="h-10 w-10 text-accent group-hover:text-accent-hover transition-colors duration-300" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-secondary-500 rounded-full animate-bounce-subtle" />
+              <BookOpen className="h-8 w-8 sm:h-10 sm:w-10 text-accent group-hover:text-accent-hover transition-colors duration-300" />
+              <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-secondary-500 rounded-full animate-bounce-subtle" />
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-2xl text-warm font-elegant-heading md:text-3xl font-elegant-heading text-primary-dark group-hover:text-primary transition-colors duration-300">
+              <h1 className="text-xl sm:text-2xl font-elegant-heading md:text-3xl text-primary-dark group-hover:text-primary transition-colors duration-300">
                 FBCL
               </h1>
               <p className="text-xs font-elegant-body text-secondary-dark -mt-1 tracking-wide">
@@ -59,23 +86,24 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
             {navigation.map((item) => (
               <div key={item.name} className="relative group">
                 <Link
                   href={item.href}
-                  className={`nav-link focus:outline-none ${
+                  className={`nav-link  ${
                     isActive(item.href) 
                       ? 'font-elegant-heading text-secondary-500' 
                       : 'text-primary-light hover:text-accent'
                   }`}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
                 >
                   {item.name}
                   <span
                     className={`nav-underline ${
                       isActive(item.href) ? 'bg-secondary-500 nav-underline-active' : 'nav-underline-hover'
                     }`}
-                  ></span>
+                  />
                 </Link>
               </div>
             ))}
@@ -83,10 +111,11 @@ export default function Header() {
 
           {/* Mobile menu button */}
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-none text-primary-light hover:text-accent hover:bg-gray-50 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500"
+            onClick={handleMenuToggle}
+            className="lg:hidden p-2 rounded-none text-primary-light hover:text-accent hover:bg-gray-50 transition-all duration-200 focus-visible"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -94,18 +123,24 @@ export default function Header() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-200 animate-slide-down">
-            <div className="px-4 py-6 space-y-2">
+          <div 
+            id="mobile-menu"
+            className="lg:hidden bg-white border-t border-gray-200 animate-slide-down"
+            role="region"
+            aria-label="Mobile navigation menu"
+          >
+            <div className="px-4 py-6 space-y-1">
               {navigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`block px-4 py-3 rounded-none font-elegant-body font-medium transition-colors text-sm focus:outline-none ${
+                  onClick={handleMenuClose}
+                  className={`block px-4 py-3 rounded-none font-elegant-body font-medium transition-colors text-sm focus-visible ${
                     isActive(item.href)
                       ? 'bg-primary-50 text-secondary-500 border-l-4 border-secondary-500' 
                       : 'text-primary-light hover:bg-gray-50 hover:text-accent'
                   }`}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
                 >
                   <span className={isActive(item.href) ? 'font-elegant-heading text-secondary-500' : ''}>
                     {item.name}
