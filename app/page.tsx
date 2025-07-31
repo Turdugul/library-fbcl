@@ -13,14 +13,14 @@ export default function HomePage() {
       <section className="relative hero-gradient text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center min-h-[80vh] sm:min-h-[90vh] py-16 sm:py-20 lg:py-24">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh] sm:min-h-[90vh] py-16 sm:py-20 lg:py-24">
             <div className="animate-fade-in">
               <div className="mb-4 sm:mb-6">
                 <span className="text-secondary-400 font-medium tracking-wide uppercase text-xs sm:text-sm bg-white/10 px-3 sm:px-4 py-2 rounded-full">
                   Established 2013
                 </span>
               </div>
-              <h1 className="text-responsive-4xl text-secondary-400 md:text-responsive-6xl font-elegant-heading mb-6 sm:mb-8 text-balance leading-tight">
+              <h1 className="text-responsive-3xl text-secondary-400 md:text-responsive-3xl font-elegant-heading mb-6 sm:mb-8 text-balance leading-tight">
                 Supporting Literacy, 
                 <span className="text-secondary-300 block">Building Community</span>
               </h1>
@@ -48,8 +48,8 @@ export default function HomePage() {
       src="/library.jpg"
       alt="Exterior view of the community library"
       className="object-cover rounded-lg"
-      width={800}
-      height={600}
+      width={500}
+      height={350}
       priority
     />
     <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 bg-white text-primary-800 p-4 sm:p-6 border border-gray-200 shadow-lg rounded-lg">
