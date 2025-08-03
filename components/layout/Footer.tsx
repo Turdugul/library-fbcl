@@ -1,6 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
+import Logo from '@/components/ui/Logo'
 import { 
   MapPin, 
   Phone, 
@@ -30,11 +32,10 @@ export default function Footer() {
     <footer className="bg-primary-900 text-white">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16">
-          {/* Logo and Description */}
+                    {/* Logo and Description */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-3 mb-6">
-              <BookOpen className="h-10 w-10 text-warm" />
-              <span className="text-2xl font-elegant-heading">FBCL</span>
+              <Logo size="medium" showText={false} />
             </Link>
             <p className="text-gray-300 mb-6 font-elegant-body leading-relaxed">
               Supporting literacy and community engagement through the Friern Barnet Community Library. 

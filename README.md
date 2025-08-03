@@ -1,6 +1,6 @@
 # Friern Barnet Community Library (FBCL)
 
-A modern, accessible website for the Friends of the Friern Barnet Community Library built with Next.js 14, TypeScript, and Tailwind CSS.
+A modern, accessible website for the  Friern Barnet Community Library built with Next.js 14, TypeScript, and Tailwind CSS.
 
 ## 🏗️ Project Structure
 
@@ -74,4 +74,4 @@ npm run dev
 
 ## 📄 License
 
-This project is maintained by the Friends of the Friern Barnet Community Library.
+This project is maintained by the Friern Barnet Community Library.

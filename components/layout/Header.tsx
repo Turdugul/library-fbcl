@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Menu, X, BookOpen } from 'lucide-react'
+import Image from 'next/image'
+import Logo from '@/components/ui/Logo'
 import { NavigationItem } from '@/types'
 
 const navigation: NavigationItem[] = [
@@ -64,26 +66,13 @@ export default function Header() {
     >
       <nav className="container-custom" role="navigation" aria-label="Main navigation">
         <div className="flex items-center justify-between h-16 sm:h-20 md:h-24">
-          {/* Logo */}
-          <Link 
-            href="/" 
-            className="flex items-center space-x-2 sm:space-x-3 group focus-visible"
-            onClick={handleMenuClose}
-            aria-label="Go to homepage"
-          >
-            <div className="relative">
-              <BookOpen className="h-8 w-8 sm:h-10 sm:w-10 text-accent group-hover:text-accent-hover transition-colors duration-300" />
-              <div className="absolute -top-1 -right-1 w-2 h-2 sm:w-3 sm:h-3 bg-secondary-500 rounded-full animate-bounce-subtle" />
-            </div>
+                    {/* Logo */}
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <Logo size="large" priority showText={false} />
             <div className="hidden sm:block">
-              <h1 className="text-xl sm:text-2xl font-elegant-heading md:text-3xl text-primary-dark group-hover:text-primary transition-colors duration-300">
-                FBCL
-              </h1>
-              <p className="text-xs font-elegant-body text-secondary-dark -mt-1 tracking-wide">
-                Friern Barnet Community Library
-              </p>
+              <span className="text-xl sm:text-2xl font-elegant-heading text-primary-dark">FBCL</span>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
