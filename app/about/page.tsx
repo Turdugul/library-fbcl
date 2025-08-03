@@ -35,7 +35,7 @@ export default function AboutPage() {
                 Our Mission
               </h2>
               <p className="text-responsive-lg text-gray-600 mb-4 sm:mb-6">
-                The Friends of the Friern Barnet Community Library is dedicated to supporting the Friern Barnet Community Library 
+                The Friern Barnet Community Library is dedicated to supporting the Friern Barnet Community Library 
                 through fundraising, volunteerism, and community outreach. We believe that access to knowledge 
                 and literacy resources is fundamental to a thriving community.
               </p>

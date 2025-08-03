@@ -10,58 +10,62 @@ export default function HomePage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative hero-gradient text-white overflow-hidden">
-        <div className="absolute inset-0 bg-black/30"></div>
-        <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh] sm:min-h-[90vh] py-16 sm:py-20 lg:py-24">
-            <div className="animate-fade-in">
-              <div className="mb-2 sm:mb-6">
-                <span className="text-secondary-400 font-medium tracking-wide uppercase text-xs sm:text-sm bg-white/10 px-3 sm:px-4 py-2 rounded-full">
-                  Established 2013
-                </span>
-              </div>
-              <h1 className="text-responsive-3xl text-secondary-400 md:text-responsive-3xl font-elegant-heading mb-6 sm:mb-8 text-balance leading-tight">
-                Supporting Literacy, 
-                <span className="text-secondary-300 block">Building Community</span>
-              </h1>
-              <p className="text-responsive-lg mb-8 sm:mb-10 text-gray-100 font-elegant-body leading-relaxed max-w-2xl">
-                Join the Friends of the Friern Barnet Community Library in fostering a love for reading, 
-                learning, and community engagement. Together, we make knowledge accessible to everyone.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-                <Button variant="secondary" asChild className="btn-secondary px-6 sm:px-8 py-3 sm:py-4 group">
-                  <Link href="/volunteer">
-                      Join Us
-                      <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
-                </Button>
-                <Button variant="outline" asChild className="border-white text-white hover:bg-white hover:text-primary-800 font-elegant-body text-base px-6 sm:px-8 py-3 sm:py-4">
-                  <Link href="/events">
-                    See Events
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            <div className="relative animate-fade-in stagger-1">
-  <div className="relative">
-    <Image
-      src="/library.jpg"
-      alt="Exterior view of the community library"
-      className="object-cover rounded-lg"
-      width={500}
-      height={350}
-      priority
-    />
-    <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 bg-white text-primary-800 p-4 sm:p-6 border border-gray-200 shadow-lg rounded-lg">
-      <p className="text-xs sm:text-sm font-elegant-heading mb-1">Since 2013</p>
-      <p className="text-xs text-secondary-dark font-elegant-body">Serving our community</p>
-    </div>
-  </div>
-</div>
+      {/* Hero Section */}
+<section className="relative hero-gradient text-white overflow-hidden">
+  <div className="absolute inset-0 bg-black/30"></div>
+  <div className="container-custom relative z-10">
+    <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh] sm:min-h-[90vh] py-16 sm:py-20 lg:py-24">
+      <div className="animate-fade-in">
+        <div className="mb-2 sm:mb-6">
+          <span className="text-secondary-400 font-medium tracking-wide uppercase text-xs sm:text-sm bg-white/10 px-3 sm:px-4 py-2 rounded-full">
+            Established 2013
+          </span>
+        </div>
+        <h1 className="text-responsive-3xl text-secondary-400 md:text-responsive-3xl font-elegant-heading mb-6 sm:mb-8 text-balance leading-tight">
+          A Library for Everyone
+          <span className="text-secondary-300 block">Rooted in Community</span>
+        </h1>
+        <p className="text-responsive-lg mb-8 sm:mb-10 text-gray-100 font-elegant-body leading-relaxed max-w-2xl">
+          Welcome to the Friern Barnet Community Library — where stories inspire, neighbors connect, and everyone is welcome. 
+          Join us in creating a space that celebrates reading, learning, and the power of community.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+          <Button variant="secondary" asChild className="btn-secondary px-6 sm:px-8 py-3 sm:py-4 group">
+            <Link href="/volunteer">
+              Join Us
+              <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
+            </Link>
+          </Button>
+          <Button variant="outline" asChild className="border-white text-white hover:bg-white hover:text-primary-800 font-elegant-body text-base px-6 sm:px-8 py-3 sm:py-4">
+            <Link href="/events">
+              See Events
+            </Link>
+          </Button>
+        </div>
+      </div>
 
+      {/* Image Section */}
+      <div className="relative animate-fade-in stagger-1">
+        <div className="relative">
+          <Image
+            src="/library.jpg"
+            alt="Exterior view of the community library"
+            className="object-cover rounded-lg"
+            width={500}
+            height={350}
+            priority
+          />
+          <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 bg-white text-primary-800 p-4 sm:p-6 border border-gray-200 shadow-lg rounded-lg">
+            <p className="text-xs sm:text-sm font-elegant-heading mb-1">Since 2013</p>
+            <p className="text-xs text-secondary-dark font-elegant-body">Serving our community</p>
           </div>
         </div>
-      </section>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* Quick Links Section */}
       <section className="section-padding-sm bg-gray-100">
@@ -133,18 +137,17 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="animate-fade-in">
-              <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
-                About FBCL
-              </h2>
-              <p className="text-responsive-lg text-secondary-dark mb-4 sm:mb-6 font-elegant-body leading-relaxed">
-                The Friends of the Friern Barnet Community Library is a non-profit organization dedicated to 
-                supporting the Friern Barnet Community Library through fundraising, volunteerism, and community outreach.
-              </p>
-              <p className="text-secondary-dark mb-6 sm:mb-8 font-elegant-body leading-relaxed">
-                We believe that access to knowledge and literacy resources is fundamental to a thriving 
-                community. Our volunteers work tirelessly to ensure that everyone has the opportunity 
-                to discover the joy of reading and learning.
-              </p>
+            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
+  About FBCL
+</h2>
+<p className="text-responsive-lg text-secondary-dark mb-4 sm:mb-6 font-elegant-body leading-relaxed">
+  At the Friern Barnet Community Library, we believe a library is more than just books — it’s a place to connect, learn, and grow together. 
+  We're a volunteer-run, not-for-profit group dedicated to keeping our local library thriving for everyone in the community.
+</p>
+<p className="text-secondary-dark mb-6 sm:mb-8 font-elegant-body leading-relaxed">
+  From storytimes to tech help, quiet reading corners to lively events, we’re here to make sure our library is welcoming, inclusive, and full of life. 
+  Whether you’re a lifelong reader or just curious, there’s a place for you here — and we'd love for you to be part of it.
+</p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Link href="/about" className="btn-secondary font-elegant-body">
                   Learn More
