@@ -69,9 +69,6 @@ export default function Header() {
                     {/* Logo */}
           <div className="flex items-center space-x-2 sm:space-x-3">
             <Logo size="large" priority showText={false} />
-            <div className="hidden sm:block">
-              <span className="text-xl sm:text-2xl font-elegant-heading text-primary-dark">FBCL</span>
-            </div>
           </div>
 
           {/* Desktop Navigation */}
