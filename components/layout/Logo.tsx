@@ -22,7 +22,7 @@ export default function LogoComponent({ showLink = true, className = '' }: LogoP
     return (
       <Link 
         href="/" 
-        className="flex items-center space-x-2 sm:space-x-3 focus-visible focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 rounded-lg p-1 transition-all duration-200 hover:bg-gray-50"
+        className="flex items-center space-x-2 sm:space-x-3 focus-visible focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 rounded-lg p-1 transition-all duration-200 "
         aria-label="Go to homepage"
       >
         {logoContent}

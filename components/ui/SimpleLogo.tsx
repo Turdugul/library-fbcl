@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { BookOpen } from 'lucide-react'
+
 
 interface SimpleLogoProps {
   size?: 'small' | 'medium' | 'large'
@@ -23,17 +23,19 @@ export default function SimpleLogo({
       <img
         src="/logo1.png"
         alt="FBCL Logo"
-        className={`object-contain ${sizeClasses[size]} ${className} transition-all duration-300 group-hover:scale-105 group-hover:brightness-110 group-hover:contrast-110`}
+        className={`object-contain ${sizeClasses[size]} ${className} transition-all duration-300 group-hover:scale-105`}
         style={{
           maxWidth: 'none',
-          imageRendering: 'crisp-edges'
+          imageRendering: 'crisp-edges',
+          mixBlendMode: 'darken',
+          filter: 'contrast(1.1) brightness(1.05)'
         }}
       />
       {/* Subtle glow effect on hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-secondary-400/10 to-accent-400/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-110 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-secondary-400/5 to-accent-400/5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-110 pointer-events-none mix-blend-multiply"></div>
       
       {/* Micro-interaction: subtle pulse animation */}
-      <div className="absolute inset-0 bg-gradient-to-r from-secondary-500/5 to-accent-500/5 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-secondary-500/3 to-accent-500/3 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-all duration-500 pointer-events-none mix-blend-multiply"></div>
     </div>
   )
 
