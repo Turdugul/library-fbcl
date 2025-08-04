@@ -10,7 +10,6 @@ export default function HomePage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      {/* Hero Section */}
 <section className="relative hero-gradient text-white overflow-hidden">
   <div className="absolute inset-0 bg-black/30"></div>
   <div className="container-custom relative z-10">
@@ -21,10 +20,10 @@ export default function HomePage() {
             Established 2013
           </span>
         </div>
-        <h1 className="text-responsive-3xl text-secondary-400 md:text-responsive-3xl font-elegant-heading mb-6 sm:mb-8 text-balance leading-tight">
-          A Library for Everyone
-          <span className="text-secondary-300 block">Rooted in Community</span>
-        </h1>
+        <h1 className="text-responsive-3xl text-secondary-400 md:text-responsive-4xl font-elegant-heading mb-6 sm:mb-8 text-balance leading-tight">
+        A Library for Every Story —
+  <span className="text-secondary-300 block">Come Find Yours</span>
+</h1>
         <p className="text-responsive-lg mb-8 sm:mb-10 text-gray-100 font-elegant-body leading-relaxed max-w-2xl">
           Welcome to the Friern Barnet Community Library — where stories inspire, neighbors connect, and everyone is welcome. 
           Join us in creating a space that celebrates reading, learning, and the power of community.
@@ -39,6 +38,15 @@ export default function HomePage() {
           <Button variant="outline" asChild className="border-white text-white hover:bg-white hover:text-primary-800 font-elegant-body text-base px-6 sm:px-8 py-3 sm:py-4">
             <Link href="/events">
               See Events
+            </Link>
+          </Button>
+          <Button 
+            asChild 
+            className="bg-green-700 hover:bg-green-900 text-white border border-green-600 hover:border-green-700 font-elegant-body text-base px-6 sm:px-8 py-3 sm:py-4 transform hover:scale-105 active:scale-95 shadow-sm hover:shadow-md focus:ring-green-500"
+            aria-label="Donate to the library"
+          >
+            <Link href="/donate">
+              Donate
             </Link>
           </Button>
         </div>

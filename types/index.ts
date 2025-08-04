@@ -7,8 +7,13 @@ export interface BaseComponentProps {
 // Navigation types
 export interface NavigationItem {
   name: string
-  href: string
+  href?: string
   icon?: React.ComponentType<{ className?: string }>
+  submenu?: {
+    name: string
+    href: string
+    description?: string
+  }[]
 }
 
 // Event types

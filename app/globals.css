@@ -114,7 +114,7 @@
   
   /* Navigation Components */
  .nav-link {
-    @apply relative font-elegant-body font-medium transition-all duration-200 text-sm tracking-wide;
+    @apply relative font-elegant-body font-semibold transition-all duration-200 text-base md:text-lg tracking-wide;
   }
    
   .nav-underline {
@@ -127,6 +127,20 @@
   
   .nav-underline-hover {
     @apply w-0 group-hover:w-full;
+  }
+  
+  /* Sub navigation underline styles */
+  .sub-nav-underline {
+    @apply absolute -bottom-1 left-0 h-0.5 bg-primary-700 transition-all duration-300;
+  }
+  
+  .sub-nav-underline-hover {
+    @apply w-0;
+  }
+  
+  /* Individual sub menu item hover - specific to submenu items */
+  .submenu-item:hover .sub-nav-underline {
+    @apply w-full !important;
   }
   
   /* Background Components */
@@ -178,12 +192,107 @@
     animation: slideDown 0.4s ease-out;
   }
   
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out;
+  }
+  
+  .animate-slide-in-left {
+    animation: slideInLeft 0.3s ease-out;
+  }
+  
   .animate-scale-in {
     animation: scaleIn 0.3s ease-out;
   }
   
   .animate-bounce-subtle {
     animation: bounceSubtle 2s infinite;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  /* Mobile-specific animations */
+  .animate-mobile-menu-in {
+    animation: mobileMenuIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-mobile-menu-out {
+    animation: mobileMenuOut 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-backdrop-in {
+    animation: backdropIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .animate-slide-down {
+    animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Enhanced touch-friendly utilities */
+  .touch-target {
+    min-height: 48px;
+    min-width: 48px;
+  }
+  
+  .touch-target-large {
+    min-height: 60px;
+    min-width: 60px;
+  }
+  
+  /* Mobile-specific spacing with better safe area handling */
+  .mobile-safe-area {
+    padding-left: max(env(safe-area-inset-left), 1rem);
+    padding-right: max(env(safe-area-inset-right), 1rem);
+    padding-top: max(env(safe-area-inset-top), 0.5rem);
+    padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
+  }
+  
+  /* Enhanced mobile navigation styles */
+  .mobile-nav-item {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .mobile-nav-item:hover {
+    @apply transform translate-x-1;
+  }
+  
+  .mobile-nav-item:active {
+    @apply transform scale-95;
+  }
+  
+  /* Improved focus states for mobile */
+  .mobile-focus-ring {
+    @apply focus-visible:ring-2 focus-visible:ring-secondary-400 focus-visible:ring-offset-2 focus-visible:outline-none;
+  }
+  
+  /* Enhanced mobile button states */
+  .mobile-button {
+    @apply transition-all duration-200 ease-out;
+  }
+  
+  .mobile-button:hover {
+    @apply transform scale-105 shadow-md;
+  }
+  
+  .mobile-button:active {
+    @apply transform scale-95;
+  }
+  
+  /* Prevent text selection on mobile buttons */
+  .no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
   }
   
   /* Stagger Animations */
@@ -253,4 +362,44 @@
 @keyframes bounceSubtle {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-5px); }
+}
+
+@keyframes slideInRight {
+  0% { transform: translateX(100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideInLeft {
+  0% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes mobileMenuIn {
+  0% { transform: translateY(-100%); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes mobileMenuOut {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100%); opacity: 0; }
+}
+
+@keyframes backdropIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 } 
