@@ -42,12 +42,12 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation - Hidden on mobile/tablet */}
-          <div className="hidden xl:flex xl:flex-1 xl:justify-center">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-center">
             <DesktopNavigation items={navigation} />
           </div>
 
           {/* Desktop Actions - Hidden on mobile/tablet */}
-          <div className="hidden xl:flex xl:flex-shrink-0 xl:items-center">
+          <div className="hidden lg:flex lg:flex-shrink-0 lg:items-center">
             <HeaderActions 
               onSearchToggle={handleSearchToggle}
               isSearchOpen={isSearchOpen}
@@ -55,7 +55,7 @@ export default function Header() {
           </div>
 
           {/* Mobile/Tablet Actions - Visible on mobile and tablet */}
-          <div className="flex xl:hidden flex-shrink-0 items-center relative z-10">
+          <div className="flex lg:hidden flex-shrink-0 items-center relative z-10">
             <MobileActions
               isMenuOpen={isMenuOpen}
               onMenuToggle={handleMenuToggle}

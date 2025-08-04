@@ -41,25 +41,15 @@ export function useHeader() {
         setIsSearchOpen(false)
       }
     }
-
-    const handleClickOutside = (event: MouseEvent) => {
-      // Close mobile menu when clicking outside
-      const target = event.target as Element
-      if (isMenuOpen && !target.closest('#mobile-menu') && !target.closest('[data-mobile-toggle]')) {
-        setIsMenuOpen(false)
-      }
-    }
     
     window.addEventListener('scroll', handleScroll, { passive: true })
     window.addEventListener('resize', handleResize)
     document.addEventListener('keydown', handleEscape)
-    document.addEventListener('click', handleClickOutside)
     
     return () => {
       window.removeEventListener('scroll', handleScroll)
       window.removeEventListener('resize', handleResize)
       document.removeEventListener('keydown', handleEscape)
-      document.removeEventListener('click', handleClickOutside)
     }
   }, [isMenuOpen])
 

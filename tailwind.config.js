@@ -103,6 +103,8 @@ module.exports = {
         'slide-down': 'slideDown 0.4s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
         'bounce-subtle': 'bounceSubtle 2s infinite',
+        'mobile-menu-in': 'mobileMenuIn 0.3s ease-out',
+        'backdrop-in': 'backdropIn 0.3s ease-out',
       },
       keyframes: {
         fadeIn: {
@@ -124,6 +126,14 @@ module.exports = {
         bounceSubtle: {
           '0%, 100%': { transform: 'translateY(0)' },
           '50%': { transform: 'translateY(-5px)' },
+        },
+        mobileMenuIn: {
+          '0%': { transform: 'translateX(100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
+        backdropIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
         },
       },
       backdropBlur: {
