@@ -27,6 +27,7 @@ const getIcon = (itemName: string) => {
 }
 
 export default function MobileMenu({ items, isOpen, onToggle, onClose, className = '' }: MobileMenuProps) {
+  console.log('MobileMenu render - isOpen:', isOpen)
   const pathname = usePathname()
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
   const [isAnimating, setIsAnimating] = useState(false)
@@ -57,11 +58,11 @@ export default function MobileMenu({ items, isOpen, onToggle, onClose, className
 
   // Close menu when route changes
   useEffect(() => {
-    if (isOpen) {
+    if (isOpen && pathname) {
       onClose()
       setOpenSubmenu(null)
     }
-  }, [pathname, isOpen, onClose])
+  }, [pathname, onClose])
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -114,13 +115,15 @@ export default function MobileMenu({ items, isOpen, onToggle, onClose, className
     }
   }, [isOpen, onClose])
 
-  if (!isOpen) return null
+  if (!isOpen) {
+    return null
+  }
 
   return (
     <>
       {/* Enhanced Backdrop */}
       <div 
-        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 xl:hidden animate-backdrop-in"
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden animate-backdrop-in"
         onClick={onClose}
         aria-hidden="true"
       />
@@ -129,7 +132,8 @@ export default function MobileMenu({ items, isOpen, onToggle, onClose, className
       <div 
         ref={menuRef}
         id="mobile-menu"
-        className={`fixed inset-0 z-50 xl:hidden animate-mobile-menu-in ${className}`}
+        className={`fixed inset-0 z-50 lg:hidden animate-mobile-menu-in ${className}`}
+
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation menu"

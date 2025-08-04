@@ -19,35 +19,33 @@ export default function MobileActions({
 }: MobileActionsProps) {
   return (
     <div className={`flex items-center space-x-2 sm:space-x-3 ${className}`}>
-      {/* Search Button - Enhanced accessibility and touch targets */}
+      {/* Search Button */}
       <button
         onClick={onSearchToggle}
         className="group relative p-3 sm:p-3.5 text-primary-light hover:text-secondary-400 hover:bg-gray-50 active:bg-gray-100 rounded-xl transition-all duration-200 focus-visible focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 touch-target flex items-center justify-center no-select shadow-sm hover:shadow-md"
         aria-label="Search website"
         aria-expanded={isSearchOpen}
         aria-controls="search-bar"
-        data-mobile-toggle
       >
         <Search className="h-5 w-5 sm:h-6 sm:w-6 transition-transform duration-200 group-hover:scale-110" />
         <span className="sr-only">Search</span>
       </button>
       
-      {/* Menu Toggle Button - Enhanced visual feedback */}
+      {/* Hamburger Menu Button */}
       <button
         onClick={onMenuToggle}
-        className="group relative p-3 sm:p-3.5 rounded-xl text-primary-light hover:text-secondary-400 hover:bg-gray-50 active:bg-gray-100 transition-all duration-200 focus-visible focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 touch-target flex items-center justify-center no-select shadow-sm hover:shadow-md"
-        aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+        className="group relative p-3 sm:p-3.5 text-primary-light hover:text-secondary-400 hover:bg-gray-50 active:bg-gray-100 rounded-xl transition-all duration-200 focus-visible focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 touch-target flex items-center justify-center no-select shadow-sm hover:shadow-md"
+        aria-label="Toggle navigation menu"
         aria-expanded={isMenuOpen}
         aria-controls="mobile-menu"
-        data-mobile-toggle
       >
         {isMenuOpen ? (
-          <X className="h-5 w-5 sm:h-6 sm:w-6 transition-all duration-200 group-hover:scale-110" />
+          <X className="h-5 w-5 sm:h-6 sm:w-6 transition-transform duration-200 group-hover:scale-110" />
         ) : (
-          <Menu className="h-5 w-5 sm:h-6 sm:w-6 transition-all duration-200 group-hover:scale-110" />
+          <Menu className="h-5 w-5 sm:h-6 sm:w-6 transition-transform duration-200 group-hover:scale-110" />
         )}
         <span className="sr-only">
-          {isMenuOpen ? "Close menu" : "Open menu"}
+          {isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
         </span>
       </button>
     </div>
