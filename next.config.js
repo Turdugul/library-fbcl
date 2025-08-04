@@ -101,6 +101,11 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/support our library/:path*',
+        destination: '/support-our-library/:path*',
+        permanent: true,
+      },
     ]
   },
   

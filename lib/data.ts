@@ -54,7 +54,7 @@ export const testimonials = [
 
 // Quick links data
 export const quickLinks = [
-  { title: 'Join Us', description: 'Become a member and support our community library', href: '/volunteer', icon: Users },
+  { title: 'Join Us', description: 'Become a member and support our community library', href: '/support-our-library/volunteer', icon: Users },
   { title: 'Catalogue', description: 'Explore our diverse collection of books and resources', href: '/catalogue', icon: BookOpen },
   { title: 'Events', description: 'Discover upcoming events and activities', href: '/events', icon: Calendar },
   { title: 'Contact', description: 'Get in touch with our team', href: '/contact', icon: Phone },

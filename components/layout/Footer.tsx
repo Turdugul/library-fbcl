@@ -235,7 +235,7 @@ export default function Footer() {
         <div className="border-t border-gray-800 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm font-elegant-body">
-              © {new Date().getFullYear()} Friends of the Friern Barnet Community Library. All rights reserved.
+              © {new Date().getFullYear()} Friern Barnet Community Library. All rights reserved.
             </p>
             <div className="flex space-x-8 mt-4 md:mt-0">
               <Link href="/privacy" className="text-gray-400 hover:text-warm text-sm transition-colors font-elegant-body group">
