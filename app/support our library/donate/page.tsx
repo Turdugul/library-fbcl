@@ -372,7 +372,7 @@ export default function DonatePage() {
                 Give your time and skills to help us maintain and improve our library services.
               </p>
               <Button variant="outline" asChild>
-                <Link href="/volunteer">
+                <Link href="/support-our-library/volunteer">
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>

@@ -30,7 +30,7 @@ export default function HomePage() {
         </p>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <Button variant="secondary" asChild className="btn-secondary px-6 sm:px-8 py-3 sm:py-4 group">
-            <Link href="/volunteer">
+            <Link href="/support-our-library/volunteer">
               Join Us
               <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
@@ -160,7 +160,7 @@ export default function HomePage() {
                 <Link href="/about" className="btn-secondary font-elegant-body">
                   Learn More
                 </Link>
-                <Link href="/volunteer" className="btn-outline font-elegant-body">
+                <Link href="/support-our-library/volunteer" className="btn-outline font-elegant-body">
                   Volunteer
                 </Link>
               </div>
@@ -276,7 +276,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button variant="secondary" asChild className="text-base px-6 sm:px-8 py-3 sm:py-4">
-                <Link href="/volunteer" className="font-elegant-body">
+                <Link href="/support-our-library/volunteer" className="font-elegant-body">
                   Volunteer With Us
                 </Link>
               </Button>

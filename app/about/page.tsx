@@ -47,7 +47,7 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                 <Button variant="secondary" asChild className="btn-secondary">
-                  <Link href="/volunteer">
+                  <Link href="/support-our-library/volunteer">
                     Join Our Mission
                   </Link>
                 </Button>
@@ -335,7 +335,7 @@ export default function AboutPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button variant="secondary" asChild>
-                <Link href="/volunteer">
+                <Link href="/support-our-library/volunteer">
                   Become a Volunteer
                 </Link>
               </Button>

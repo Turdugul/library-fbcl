@@ -28,9 +28,9 @@ const quickLinks = [
 ]
 
 const servicesLinks = [
-  { name: 'Volunteer', href: '/volunteer', description: 'Join our team' },
+  { name: 'Volunteer', href: '/support-our-library/volunteer', description: 'Join our team' },
   { name: 'Donate', href: '/donate', description: 'Support our library' },
-  { name: 'Hire Us', href: '/hire-us', description: 'Book our space' },
+  { name: 'Hire Us', href: '/support-our-library/hire-us', description: 'Book our space' },
   { name: 'New Books', href: '/catalogue/new-books', description: 'Latest arrivals' },
   { name: 'Reading Guides', href: '/catalogue/guides', description: 'Reading recommendations' },
 ]
@@ -39,8 +39,8 @@ const resourcesLinks = [
   { name: 'About Gallery', href: '/about/gallery', description: 'Photo gallery' },
   { name: 'Trustees', href: '/about/trustees', description: 'Meet our board' },
   { name: 'Events Gallery', href: '/events/gallery', description: 'Event photos' },
-  { name: 'Volunteer Apply', href: '/volunteer/apply', description: 'Application form' },
-  { name: 'Support Donate', href: '/support our library/donate', description: 'Donation page' },
+  { name: 'Volunteer Apply', href: '/support-our-library/volunteer/apply', description: 'Application form' },
+  { name: 'Support Donate', href: '/support-our-library/donate', description: 'Donation page' },
 ]
 
 const socialLinks = [
