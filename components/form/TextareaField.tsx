@@ -1,3 +1,5 @@
+'use client'
+
 import React from 'react'
 import { Textarea } from '@/components/ui'
 import { AlertCircle } from 'lucide-react'

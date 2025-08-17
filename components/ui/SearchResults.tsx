@@ -20,7 +20,7 @@ export default function SearchResults({ results, query, onResultClick, className
     ? results 
     : results.filter(result => {
         if (selectedCategory === 'events') return result.type === 'event'
-        if (selectedCategory === 'people') return result.type === 'trustee'
+
         if (selectedCategory === 'activities') return result.type === 'activity'
         if (selectedCategory === 'about') return ['value', 'award', 'timeline'].includes(result.type)
         return true
@@ -29,7 +29,7 @@ export default function SearchResults({ results, query, onResultClick, className
   const getTypeIcon = (type: string) => {
     switch (type) {
       case 'event': return Calendar
-      case 'trustee': return User
+
       case 'activity': return Target
       case 'value':
       case 'award':
@@ -41,7 +41,7 @@ export default function SearchResults({ results, query, onResultClick, className
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'event': return 'text-blue-600 bg-blue-50'
-      case 'trustee': return 'text-green-600 bg-green-50'
+
       case 'activity': return 'text-purple-600 bg-purple-50'
       case 'value':
       case 'award':

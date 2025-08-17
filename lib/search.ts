@@ -2,7 +2,6 @@ import {
   featuredEvents, 
   upcomingEvents, 
   pastEvents, 
-  trustees, 
   activities, 
   values, 
   awards,
@@ -13,7 +12,7 @@ import {
 // Define search result types
 export interface SearchResult {
   id: string
-  type: 'event' | 'trustee' | 'activity' | 'value' | 'award' | 'timeline' | 'quicklink'
+  type: 'event' | 'activity' | 'value' | 'award' | 'timeline' | 'quicklink'
   title: string
   description: string
   url?: string
@@ -27,7 +26,6 @@ export interface SearchResult {
 export const searchCategories = [
   { id: 'all', label: 'All Results', icon: '🔍' },
   { id: 'events', label: 'Events', icon: '📅' },
-  { id: 'people', label: 'People', icon: '👥' },
   { id: 'activities', label: 'Activities', icon: '🎯' },
   { id: 'about', label: 'About Us', icon: 'ℹ️' },
 ]
@@ -109,27 +107,7 @@ export function searchLibrary(query: string, category: string = 'all'): SearchRe
     })
   }
   
-  // Search trustees/people
-  if (category === 'all' || category === 'people') {
-    trustees.forEach((trustee) => {
-      const relevance = calculateRelevance(searchTerm, [
-        trustee.name,
-        trustee.role,
-        trustee.bio
-      ])
-      if (relevance > 0) {
-        results.push({
-          id: `trustee-${trustee.id}`,
-          type: 'trustee',
-          title: trustee.name,
-          description: `${trustee.role} - ${trustee.bio}`,
-          image: trustee.image,
-          url: `/about/trustees#trustee-${trustee.id}`,
-          relevance
-        })
-      }
-    })
-  }
+
   
   // Search activities
   if (category === 'all' || category === 'activities') {
@@ -284,7 +262,6 @@ export function getSearchSuggestions(query: string): string[] {
     'story time',
     'computer classes',
     'yoga',
-    'trustees',
     'about us',
     'contact',
     'summer reading',
@@ -308,14 +285,12 @@ export function getSearchResultCount(query: string): Record<string, number> {
   const counts: Record<string, number> = {
     all: allResults.length,
     events: 0,
-    people: 0,
     activities: 0,
     about: 0
   }
   
   allResults.forEach(result => {
     if (result.type === 'event') counts.events++
-    else if (result.type === 'trustee') counts.people++
     else if (result.type === 'activity') counts.activities++
     else if (['value', 'award', 'timeline'].includes(result.type)) counts.about++
   })

@@ -95,9 +95,7 @@ export async function getTestimonials() {
   return cachedApiRequest('/testimonials', {}, 'testimonials')
 }
 
-export async function getTrustees() {
-  return cachedApiRequest('/trustees', {}, 'trustees')
-}
+
 
 export async function getGallery() {
   return cachedApiRequest('/gallery', {}, 'gallery')

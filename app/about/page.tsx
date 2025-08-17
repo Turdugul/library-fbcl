@@ -1,10 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { Calendar, Users, BookOpen, Heart, Award, Target, ChevronLeft, ChevronRight, Mail, Linkedin, Globe } from 'lucide-react'
-import { Button, Card, Carousel, Gallery } from '@/components/ui'
-import { useState } from 'react'
-import { timeline, values, impactStats, galleryImages, awards, trustees, aboutGalleryImages } from '@/lib/data'
+import { Calendar, Users, BookOpen, Heart, Award, Target } from 'lucide-react'
+import { Button, Card, Gallery } from '@/components/ui'
+import { timeline, values, awards, aboutGalleryImages } from '@/lib/data'
 
 export default function AboutPage() {
   return (
@@ -146,39 +145,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Impact Stats */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-bold mb-4">
-              Our Impact
-            </h2>
-            <p className="text-responsive-lg text-gray-600 max-w-2xl mx-auto">
-              The numbers tell the story of our commitment to the community.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8">
-            {impactStats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className="text-center animate-fade-in p-3 sm:p-4"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex justify-center mb-3 sm:mb-4">
-                  <stat.icon className="h-8 w-8 sm:h-10 sm:w-10 text-primary-600" />
-                </div>
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-xs sm:text-sm text-gray-600">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* Gallery Section */}
       <section className="section-padding">
@@ -249,78 +216,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Trustees Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-bold mb-4">
-              Meet Our Trustees
-            </h2>
-            <p className="text-responsive-lg text-gray-600 max-w-2xl mx-auto">
-              Our dedicated board of trustees provides leadership and guidance to ensure FBCL continues to serve our community effectively.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {trustees.map((trustee, index) => (
-              <Card key={trustee.id} className="text-center animate-fade-in hover-lift p-4 sm:p-6" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="mb-4">
-                  <img
-                    src={trustee.image}
-                    alt={trustee.name}
-                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-full object-cover mx-auto mb-3 sm:mb-4 border-4 border-gray-100 shadow-lg"
-                  />
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1">{trustee.name}</h3>
-                  <p className="text-secondary-500 font-medium mb-2 text-sm sm:text-base">{trustee.role}</p>
-                  <span className="text-xs sm:text-sm text-gray-500 bg-gray-50 px-2 sm:px-3 py-1 rounded-full">
-                    Term: {trustee.term}
-                  </span>
-                </div>
-                
-                <p className="text-gray-600 text-xs sm:text-sm mb-4 leading-relaxed">
-                  {trustee.bio}
-                </p>
-                
-                <div className="flex justify-center space-x-2 sm:space-x-3">
-                  <a
-                    href={`mailto:${trustee.email}`}
-                    className="text-gray-400 hover:text-secondary-500 transition-colors p-2 hover:bg-gray-50 rounded-full"
-                    aria-label={`Email ${trustee.name}`}
-                  >
-                    <Mail className="h-4 w-4" />
-                  </a>
-                  {trustee.linkedin !== "#" && (
-                    <a
-                      href={trustee.linkedin}
-                      className="text-gray-400 hover:text-secondary-500 transition-colors p-2 hover:bg-gray-50 rounded-full"
-                      aria-label={`${trustee.name}'s LinkedIn`}
-                    >
-                      <Linkedin className="h-4 w-4" />
-                    </a>
-                  )}
-                  {trustee.website !== "#" && (
-                    <a
-                      href={trustee.website}
-                      className="text-gray-400 hover:text-secondary-500 transition-colors p-2 hover:bg-gray-50 rounded-full"
-                      aria-label={`${trustee.name}'s Website`}
-                    >
-                      <Globe className="h-4 w-4" />
-                    </a>
-                  )}
-                </div>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="text-center mt-10 sm:mt-12 animate-fade-in stagger-3">
-            <Button asChild variant="outline">
-              <Link href="about/trustees">
-                View All Trustees
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA Section */}
       <section className="section-padding bg-primary-600 text-white">

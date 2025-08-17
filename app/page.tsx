@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, MapPin, Clock, Phone, ChevronRight, Award } from 'lucide-react'
 import { Button, Card, Carousel, Gallery } from '@/components/ui'
-import { stats, featuredEvents, testimonials, quickLinks, activities, galleryImages, awards, homeGalleryImages } from '@/lib/data'
+import { featuredEvents, testimonials, quickLinks, activities, galleryImages, awards, homeGalleryImages } from '@/lib/data'
 
 export default function HomePage() {
   return (
@@ -107,38 +107,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
-              Our Impact
-            </h2>
-            <p className="text-responsive-lg text-secondary-dark max-w-3xl mx-auto font-elegant-body">
-              Discover the numbers behind our community library's success and growth.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className="text-center animate-fade-in hover-lift p-4 sm:p-6"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex justify-center mb-3 sm:mb-4">
-                  <stat.icon className="h-8 w-8 sm:h-12 sm:w-12 text-accent" />
-                </div>
-                <div className="text-2xl sm:text-3xl md:text-4xl font-elegant-heading text-primary-dark mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-secondary-dark font-elegant-body text-xs sm:text-sm">
-                  {stat.label}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
 
       {/* About Section */}
       <section className="section-padding bg-gray-50">

@@ -6,7 +6,7 @@ This document describes the search functionality implemented for the library web
 
 The search system provides comprehensive search capabilities across all library content including:
 - Events (upcoming, past, featured)
-- People (trustees, staff)
+- People (staff)
 - Activities and programs
 - About us content (values, awards, timeline)
 - Quick links and navigation
@@ -23,7 +23,7 @@ The search system provides comprehensive search capabilities across all library 
 **Search Categories:**
 - `all` - Search across all content
 - `events` - Events only
-- `people` - Trustees and staff
+- `people` - Staff
 - `activities` - Programs and activities
 - `about` - About us content
 
@@ -63,7 +63,7 @@ Popular search terms including:
 - events, volunteer, donate
 - book club, story time
 - computer classes, yoga
-- trustees, about us, contact
+- about us, contact
 
 ### Result Filtering
 - Category-based filtering
