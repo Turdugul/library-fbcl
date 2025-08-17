@@ -16,6 +16,7 @@ export const navigation: NavigationItem[] = [
     name: 'Support Our Library', 
     submenu: [
       { name: 'Volunteer', href: '/support-our-library/volunteer', description: 'Join our volunteer team' },
+      { name: 'Membership', href: '/support-our-library/membership', description: 'Apply for library membership' },
       { name: 'Donate', href: '/donate', description: 'Support our library financially' },
       { name: 'Hire Us', href: '/support-our-library/hire-us', description: 'Book our space for events' }
     ]

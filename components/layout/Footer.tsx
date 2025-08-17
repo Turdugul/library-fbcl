@@ -29,6 +29,7 @@ const quickLinks = [
 
 const servicesLinks = [
   { name: 'Volunteer', href: '/support-our-library/volunteer', description: 'Join our team' },
+  { name: 'Membership', href: '/support-our-library/membership', description: 'Apply for membership' },
   { name: 'Donate', href: '/donate', description: 'Support our library' },
   { name: 'Hire Us', href: '/support-our-library/hire-us', description: 'Book our space' },
   { name: 'New Books', href: '/catalogue/new-books', description: 'Latest arrivals' },

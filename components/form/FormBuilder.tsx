@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState } from 'react'
 import { Send } from 'lucide-react'
 import { Button, Card } from '@/components/ui'
@@ -205,68 +207,47 @@ export function FormBuilder({ config, onSubmit, className = '' }: FormBuilderPro
   }
 
   return (
-    <div className={`pt-16 ${className}`}>
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
-        <div className="container-custom">
-          <div className="text-center max-w-4xl mx-auto animate-fade-in">
-            <h1 className="text-4xl md:text-6xl text-secondary-400 font-bold mb-6">
-              Join Our Volunteer Team
-            </h1>
-            <p className="text-xl text-gray-100 mb-8">
-              Help us support literacy and community engagement at the Friern Barnet Community Library
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Application Form */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <Card className="p-8">
-              <form onSubmit={handleSubmit} className="space-y-8">
-                {config.sections.map((section) => (
-                  <FormSection
-                    key={section.id}
-                    title={section.title}
-                    icon={section.icon}
-                  >
-                    <div className="space-y-6">
-                      {section.fields.map((field) => (
-                        <div key={field.id}>
-                          {renderField(field)}
-                        </div>
-                      ))}
-                    </div>
-                  </FormSection>
+    <div className={className}>
+      <Card className="p-8">
+        <form onSubmit={handleSubmit} className="space-y-8">
+          {config.sections.map((section) => (
+            <FormSection
+              key={section.id}
+              title={section.title}
+              icon={section.icon}
+            >
+              <div className="space-y-6">
+                {section.fields.map((field) => (
+                  <div key={field.id}>
+                    {renderField(field)}
+                  </div>
                 ))}
+              </div>
+            </FormSection>
+          ))}
 
-                {/* Submit Button */}
-                <div className="text-center pt-6">
-                  <Button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="px-8 py-3 text-lg"
-                  >
-                    {isSubmitting ? (
-                      <div className="flex items-center justify-center">
-                        <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        <span>Submitting...</span>
-                      </div>
-                    ) : (
-                      <div className="flex items-center justify-center">
-                        <Send className="h-5 w-5 mr-2" />
-                        <span>Join FBCL Team!</span>
-                      </div>
-                    )}
-                  </Button>
+          {/* Submit Button */}
+          <div className="text-center pt-6">
+            <Button
+              type="submit"
+              disabled={isSubmitting}
+              className="px-8 py-3 text-lg"
+            >
+              {isSubmitting ? (
+                <div className="flex items-center justify-center">
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                  <span>Submitting...</span>
                 </div>
-              </form>
-            </Card>
+              ) : (
+                <div className="flex items-center justify-center">
+                  <Send className="h-5 w-5 mr-2" />
+                  <span>Submit Application</span>
+                </div>
+              )}
+            </Button>
           </div>
-        </div>
-      </section>
+        </form>
+      </Card>
     </div>
   )
 } 
