@@ -6,7 +6,6 @@ export const navigation: NavigationItem[] = [
     name: 'About', 
     submenu: [
       { name: 'About Us', href: '/about', description: 'Learn about our library' },
-      { name: 'Trustees', href: '/about/trustees', description: 'Meet our board members' },
       { name: 'Testimonials', href: '/about/testimonials', description: 'What our community says' },
       { name: 'Gallery', href: '/about/gallery', description: 'Photo gallery' },
     ]

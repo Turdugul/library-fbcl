@@ -37,7 +37,6 @@ const servicesLinks = [
 
 const resourcesLinks = [
   { name: 'About Gallery', href: '/about/gallery', description: 'Photo gallery' },
-  { name: 'Trustees', href: '/about/trustees', description: 'Meet our board' },
   { name: 'Events Gallery', href: '/events/gallery', description: 'Event photos' },
   { name: 'Volunteer Apply', href: '/support-our-library/volunteer/apply', description: 'Application form' },
   { name: 'Support Donate', href: '/support-our-library/donate', description: 'Donation page' },

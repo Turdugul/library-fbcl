@@ -250,15 +250,15 @@ export function FormBuilder({ config, onSubmit, className = '' }: FormBuilderPro
                     className="px-8 py-3 text-lg"
                   >
                     {isSubmitting ? (
-                      <>
+                      <div className="flex items-center justify-center">
                         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                        Submitting...
-                      </>
+                        <span>Submitting...</span>
+                      </div>
                     ) : (
-                      <>
+                      <div className="flex items-center justify-center">
                         <Send className="h-5 w-5 mr-2" />
-                        Join FBCL Team!
-                      </>
+                        <span>Join FBCL Team!</span>
+                      </div>
                     )}
                   </Button>
                 </div>

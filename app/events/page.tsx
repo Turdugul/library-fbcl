@@ -182,58 +182,6 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Event Statistics */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="text-center mb-12 animate-fade-in">
-            <h2 className="text-responsive-3xl text-secondary-400 md:text-responsive-4xl font-bold mb-4">
-              Our Events by the Numbers
-            </h2>
-            <p className="text-responsive-lg text-gray-600 max-w-2xl mx-auto">
-              The impact of our events is measured in community engagement and learning opportunities.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            <Card className="text-center animate-fade-in p-4 sm:p-6" style={{ animationDelay: '0.1s' }}>
-              <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-primary-600 mb-2">
-                50+
-              </div>
-              <div className="text-gray-600 font-medium text-xs sm:text-sm">
-                Events Per Year
-              </div>
-            </Card>
-            
-            <Card className="text-center animate-fade-in p-4 sm:p-6" style={{ animationDelay: '0.2s' }}>
-              <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-primary-600 mb-2">
-                2,500+
-              </div>
-              <div className="text-gray-600 font-medium text-xs sm:text-sm">
-                Annual Attendees
-              </div>
-            </Card>
-            
-            <Card className="text-center animate-fade-in p-4 sm:p-6" style={{ animationDelay: '0.3s' }}>
-              <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-primary-600 mb-2">
-                95%
-              </div>
-              <div className="text-gray-600 font-medium text-xs sm:text-sm">
-                Satisfaction Rate
-              </div>
-            </Card>
-            
-            <Card className="text-center animate-fade-in p-4 sm:p-6" style={{ animationDelay: '0.4s' }}>
-              <div className="text-2xl sm:text-4xl md:text-5xl font-bold text-primary-600 mb-2">
-                6
-              </div>
-              <div className="text-gray-600 font-medium text-xs sm:text-sm">
-                Event Categories
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* Past Events */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
