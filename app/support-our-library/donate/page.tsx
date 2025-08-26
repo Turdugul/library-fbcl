@@ -85,7 +85,7 @@ export default function DonatePage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative hero-gradient text-white overflow-hidden">
+      <section className="relative bg-[#008080] text-white overflow-hidden">
         <div className="absolute inset-0 bg-black/40"></div>
         <div className="container-custom relative z-10">
           <div className="text-center py-16 sm:py-20 lg:py-24">
@@ -126,7 +126,7 @@ export default function DonatePage() {
             <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
               Your Impact
             </h2>
-            <p className="text-responsive-lg text-secondary-dark max-w-3xl mx-auto font-elegant-body">
+            <p className="text-responsive-lg text-gray-700 max-w-3xl mx-auto font-elegant-body">
               See how your donations make a real difference in our community.
             </p>
           </div>
@@ -144,7 +144,7 @@ export default function DonatePage() {
                 <div className="text-2xl sm:text-3xl md:text-4xl font-elegant-heading text-primary-dark mb-2">
                   {stat.number}
                 </div>
-                <div className="text-secondary-dark font-elegant-body text-xs sm:text-sm">
+                <div className="text-gray-700 font-elegant-body text-xs sm:text-sm">
                   {stat.label}
                 </div>
               </div>
@@ -160,7 +160,7 @@ export default function DonatePage() {
             <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
               How Your Donation Helps
             </h2>
-            <p className="text-responsive-lg text-secondary-dark max-w-3xl mx-auto font-elegant-body">
+            <p className="text-responsive-lg text-gray-700 max-w-3xl mx-auto font-elegant-body">
               Every pound you donate goes directly to supporting our community library and its programs.
             </p>
           </div>
@@ -169,16 +169,16 @@ export default function DonatePage() {
             <Card className="animate-fade-in hover-lift p-6 sm:p-8 text-center" style={{ animationDelay: '0.1s' }}>
               <BookOpen className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="text-xl sm:text-2xl font-elegant-heading mb-3">New Books & Resources</h3>
-              <p className="text-secondary-dark font-elegant-body leading-relaxed">
-                Your donations help us purchase new books, digital resources, and educational materials 
-                for all age groups in our community.
-              </p>
+                              <p className="text-gray-700 font-elegant-body leading-relaxed">
+                  Your donations help us purchase new books, digital resources, and educational materials 
+                  for all age groups in our community.
+                </p>
             </Card>
             
             <Card className="animate-fade-in hover-lift p-6 sm:p-8 text-center" style={{ animationDelay: '0.2s' }}>
               <Users className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="text-xl sm:text-2xl font-elegant-heading mb-3">Community Programs</h3>
-              <p className="text-secondary-dark font-elegant-body leading-relaxed">
+              <p className="text-gray-700 font-elegant-body leading-relaxed">
                 Support our reading programs, workshops, and events that bring our community together 
                 and promote lifelong learning.
               </p>
@@ -187,7 +187,7 @@ export default function DonatePage() {
             <Card className="animate-fade-in hover-lift p-6 sm:p-8 text-center" style={{ animationDelay: '0.3s' }}>
               <Award className="h-12 w-12 text-accent mx-auto mb-4" />
               <h3 className="text-xl sm:text-2xl font-elegant-heading mb-3">Library Maintenance</h3>
-              <p className="text-secondary-dark font-elegant-body leading-relaxed">
+              <p className="text-gray-700 font-elegant-body leading-relaxed">
                 Help us maintain our beautiful library space, upgrade facilities, and ensure 
                 a welcoming environment for all visitors.
               </p>
@@ -203,7 +203,7 @@ export default function DonatePage() {
             <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
               Choose Your Impact
             </h2>
-            <p className="text-responsive-lg text-secondary-dark max-w-3xl mx-auto font-elegant-body">
+            <p className="text-responsive-lg text-gray-700 max-w-3xl mx-auto font-elegant-body">
               Select a donation tier that fits your budget and see the benefits you'll receive.
             </p>
           </div>

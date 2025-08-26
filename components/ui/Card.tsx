@@ -11,9 +11,9 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
     const baseClasses = 'rounded-none transition-all duration-300 relative overflow-hidden group'
     
     const variants = {
-      default: 'bg-white border border-gray-200 hover:border-gray-300 shadow-sm hover:shadow-md hover:transform hover:scale-105',
-      elevated: 'bg-white border border-gray-200 shadow-md hover:shadow-lg hover:transform hover:scale-105',
-      outlined: 'bg-white border border-gray-200 hover:border-gray-300 hover:transform hover:scale-105'
+      default: 'bg-sky-100 border border-cyan-500 hover:border-cyan-600 shadow-sm hover:shadow-md hover:transform hover:scale-105',
+      elevated: 'bg-sky-100 border border-cyan-500 shadow-md hover:shadow-lg hover:transform hover:scale-105',
+      outlined: 'bg-sky-100 border border-cyan-500 hover:border-cyan-600 hover:transform hover:scale-105'
     }
     
     return (

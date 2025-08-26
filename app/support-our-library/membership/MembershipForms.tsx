@@ -318,7 +318,7 @@ export function MembershipForms() {
   return (
     <>
       {/* Adult Application Form */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-cyan-100">
         <div className="container-custom">
           <div className="text-center mb-8">
             <h2 className="text-responsive-2xl md:text-responsive-3xl font-bold mb-4">
@@ -328,23 +328,52 @@ export function MembershipForms() {
               Thank you for joining FBCL Library. Library membership costs £2 (please bring the correct change). When collecting your membership card, you will need to bring a form of ID showing your name and address (e.g. a utility bill dated in last three months, your latest Council Tax bill or your driving licence).
             </p>
             
-            {/* Terms & Conditions Button */}
-            <div className="flex flex-col items-center gap-4 m-4 p-5 width-60 bg-violet-500">
-            <p className="text-sm text-gray-800 max-w-md">
-                Please click to read Library membership T & Cs before you submit your form
-              </p>
-                             
-               <Link href="/support-our-library/membership/terms" >
-                 <Button variant="outline" >
-                 <div className="flex items-center justify-center">
-                   <ExternalLink className="h-5 w-5 mr-2" />
-                  <span>Terms & Conditions</span>
+            {/* Terms & Conditions Section */}
+            <div className="mb-10">
+              <div className="bg-gradient-to-br from-sky-50 to-cyan-100 border border-cyan-300 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="flex flex-col items-center text-center space-y-4">
+                  {/* Icon and Title */}
+                  <div className="flex items-center justify-center w-16 h-16 bg-[#FFBF00]/20 rounded-full mb-2">
+                    <svg 
+                      className="w-8 h-8 text-[#FFBF00]" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" 
+                      />
+                    </svg>
                   </div>
-                 </Button>
-               </Link>
-             
+                  
+                  <h3 className="text-lg font-semibold text-gray-800 font-elegant-heading">
+                    Important: Read Before Submitting
+                  </h3>
+                  
+                  <p className="text-sm text-gray-700 max-w-md leading-relaxed">
+                    Please review our Library membership Terms & Conditions before submitting your application form
+                  </p>
+                  
+                  {/* Button */}
+                  <Link href="/support-our-library/membership/terms">
+                    <Button 
+                      variant="outline" 
+                      className="group hover:scale-105 transition-transform duration-200"
+                    >
+                      <div className="flex items-center justify-center space-x-2">
+                        <ExternalLink className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
+                        <span className="font-medium">View Terms & Conditions</span>
+                      </div>
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
+          <div className="max-w-2xl m-auto">
           <FormBuilder 
             config={adultFormConfig} 
             onSubmit={async (formData) => {
@@ -353,11 +382,12 @@ export function MembershipForms() {
               // For now, we'll just log it
             }}
           />
+          </div>
         </div>
       </section>
 
       {/* Youth Application Form */}
-      <section className="section-padding">
+      <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-8">
             <h2 className="text-responsive-2xl md:text-responsive-3xl font-bold mb-4">
@@ -366,24 +396,8 @@ export function MembershipForms() {
             <p className="text-gray-600 max-w-3xl mx-auto mb-6">
               You must have the permission of your parent or guardian to apply for a ticket which costs £1 (please bring the correct change). Your parent or guardian should give their details on this form and they will need to come into the library with ID showing their name and address (e.g. a utility bill dated in last three months, your latest Council Tax bill or your driving licence) to collect your ticket.
             </p>
-            
-            {/* Terms & Conditions Button */}
-            <div className="flex flex-col items-center gap-4 m-4 p-5 width-60 bg-violet-500">
-            <p className="text-sm text-gray-800 max-w-md">
-                Please click to read Library membership T & Cs before you submit your form
-              </p>
-                             
-               <Link href="/support-our-library/membership/terms" >
-                 <Button variant="outline" >
-                 <div className="flex items-center justify-center">
-                   <ExternalLink className="h-5 w-5 mr-2" />
-                  <span>Terms & Conditions</span>
-                  </div>
-                 </Button>
-               </Link>
-             
-            </div>
           </div>
+          <div className="max-w-2xl m-auto">
           <FormBuilder 
             config={youthFormConfig} 
             onSubmit={async (formData) => {
@@ -392,6 +406,7 @@ export function MembershipForms() {
               // For now, we'll just log it
             }}
           />
+          </div>
         </div>
       </section>
     </>

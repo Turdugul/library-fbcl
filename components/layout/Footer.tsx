@@ -66,7 +66,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-900 text-white">
+    <footer className="bg-[#008080] text-white mt-10">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 py-16">
           {/* Logo and Description */}
@@ -84,7 +84,7 @@ export default function Footer() {
                   href={social.href}
                   target={social.external ? "_blank" : "_self"}
                   rel={social.external ? "noopener noreferrer" : ""}
-                  className="text-gray-400 hover:text-warm transition-all duration-300 hover:scale-110 p-2 rounded-lg hover:bg-gray-800"
+                  className="text-amber-300 hover:text-amber-400 transition-all duration-300 hover:scale-110 p-2 rounded-lg hover:bg-cyan-200"
                   aria-label={`Visit our ${social.name} page`}
                 >
                   <social.icon className="h-5 w-5" />
@@ -96,7 +96,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="text-lg font-elegant-heading mb-6 flex items-center">
-              <BookOpen className="h-5 w-5 mr-2 text-warm" />
+              <BookOpen className="h-5 w-5 mr-2 text-amber-400" />
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -104,7 +104,7 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-warm transition-colors font-elegant-body text-sm group flex items-center"
+                    className="text-gray-100 hover:text-amber-300 transition-colors font-elegant-body text-sm group flex items-center"
                   >
                     <span className="group-hover:translate-x-1 transition-transform duration-200">
                       {link.name}
@@ -126,12 +126,12 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-warm transition-colors font-elegant-body text-sm group"
+                    className="text-white hover:text-warm transition-colors font-elegant-body text-sm group"
                   >
                     <div className="group-hover:translate-x-1 transition-transform duration-200">
                       {link.name}
                     </div>
-                    <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
+                    <div className="text-xs text-gray-300 group-hover:text-gray-200 transition-colors">
                       {link.description}
                     </div>
                   </Link>
@@ -151,12 +151,12 @@ export default function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-warm transition-colors font-elegant-body text-sm group"
+                    className="text-white hover:text-warm transition-colors font-elegant-body text-sm group"
                   >
                     <div className="group-hover:translate-x-1 transition-transform duration-200">
                       {link.name}
                     </div>
-                    <div className="text-xs text-gray-500 group-hover:text-gray-400 transition-colors">
+                    <div className="text-xs text-gray-200 group-hover:text-gray-100 transition-colors">
                       {link.description}
                     </div>
                   </Link>
@@ -167,7 +167,7 @@ export default function Footer() {
         </div>
 
         {/* Contact and Hours Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-t border-gray-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 py-8 border-t border-gray-200">
           {/* Contact Information */}
           <div>
             <h3 className="text-lg font-elegant-heading mb-6 flex items-center">
@@ -177,17 +177,17 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-warm mt-0.5 flex-shrink-0" />
-                <div className="text-gray-300 font-elegant-body text-sm leading-relaxed">
+                <div className="text-white font-elegant-body text-sm leading-relaxed">
                   <div>Friern Barnet Rd</div>
                   <div>London N11 3DS</div>
-                  <div className="text-xs text-gray-500 mt-1">United Kingdom</div>
+                  <div className="text-xs text-gray-100 mt-1">United Kingdom</div>
                 </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-warm flex-shrink-0" />
                 <a 
                   href="tel:+44-20-8361-0174" 
-                  className="text-gray-300 hover:text-warm transition-colors font-elegant-body text-sm group"
+                  className="text-white hover:text-warm transition-colors font-elegant-body text-sm group"
                 >
                   <span className="group-hover:underline">020 8361 0174</span>
                 </a>
@@ -196,7 +196,7 @@ export default function Footer() {
                 <Mail className="h-5 w-5 text-warm flex-shrink-0" />
                 <a 
                   href="mailto:fbcllibrary15@gmail.com" 
-                  className="text-gray-300 hover:text-warm transition-colors font-elegant-body text-sm group"
+                  className="text-white hover:text-warm transition-colors font-elegant-body text-sm group"
                 >
                   <span className="group-hover:underline">fbcllibrary15@gmail.com</span>
                 </a>
@@ -217,13 +217,13 @@ export default function Footer() {
               </div>
               <div className="flex justify-between items-center">
                 <span>Saturday</span>
-                <span className="text-gray-500">Closed</span>
+                <span className="text-gray-200">Closed</span>
               </div>
               <div className="flex justify-between items-center">
                 <span>Sunday</span>
-                <span className="text-gray-500">Closed</span>
+                <span className="text-gray-200">Closed</span>
               </div>
-              <div className="pt-2 text-xs text-gray-500">
+              <div className="pt-2 text-xs text-gray-200">
                 <div>Bank Holidays: Closed</div>
                 <div>Special events may affect hours</div>
               </div>
@@ -232,27 +232,27 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 py-8">
+        <div className="border-t border-gray-200 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm font-elegant-body">
+            <p className="text-gray-200 text-sm font-elegant-body">
               © {new Date().getFullYear()} Friern Barnet Community Library. All rights reserved.
             </p>
             <div className="flex space-x-8 mt-4 md:mt-0">
-              <Link href="/privacy" className="text-gray-400 hover:text-warm text-sm transition-colors font-elegant-body group">
+              <Link href="/privacy" className="text-gray-200 hover:text-warm text-sm transition-colors font-elegant-body group">
                 <span className="group-hover:underline">Privacy Policy</span>
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-warm text-sm transition-colors font-elegant-body group">
+              <Link href="/terms" className="text-gray-200 hover:text-warm text-sm transition-colors font-elegant-body group">
                 <span className="group-hover:underline">Terms of Service</span>
               </Link>
-              <Link href="/accessibility" className="text-gray-400 hover:text-warm text-sm transition-colors font-elegant-body group">
+              <Link href="/accessibility" className="text-gray-200 hover:text-warm text-sm transition-colors font-elegant-body group">
                 <span className="group-hover:underline">Accessibility</span>
               </Link>
             </div>
           </div>
           
           {/* Developer Credit */}
-          <div className="text-center mt-6 pt-4 border-t border-gray-800">
-            <p className="text-gray-400 text-sm font-elegant-body">
+          <div className="text-center mt-6 pt-4 border-t border-gray-200">
+            <p className="text-amber-100 text-sm font-elegant-body">
               Made with{' '}
               <span className="text-red-400 animate-pulse">❤️</span>
               {' '}by{' '}

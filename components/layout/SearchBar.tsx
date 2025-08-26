@@ -106,14 +106,14 @@ export default function SearchBar({ isOpen, onClose, className = '' }: SearchBar
     <div className={`border-t border-gray-200/50 bg-white/95 backdrop-blur-sm animate-slide-down mobile-safe-area shadow-lg ${className}`}>
       <form onSubmit={handleSubmit} className="p-4 sm:p-6">
         <div className="relative group">
-          <Search className="absolute left-4 sm:left-5 top-1/2 transform -translate-y-1/2 h-5 w-5 sm:h-6 sm:w-6 text-gray-400 group-focus-within:text-secondary-400 transition-colors duration-200" />
+          <Search className="absolute left-4 sm:left-5 top-1/2 transform -translate-y-1/2 h-5 w-5 sm:h-6 sm:w-6 text-gray-400 group-focus-within:text-[#FFBF00] transition-colors duration-200" />
           <input
             ref={searchRef}
             type="text"
             placeholder="Search for events, people, activities, and more..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-12 sm:pl-14 pr-12 sm:pr-14 py-4 sm:py-5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-secondary-400 focus:border-transparent transition-all duration-200 text-base sm:text-lg touch-target shadow-sm focus:shadow-md"
+            className="w-full pl-12 sm:pl-14 pr-12 sm:pr-14 py-4 sm:py-5 border border-gray-200 rounded-xl focus:ring-2 focus:ring-[#FFBF00] focus:border-transparent transition-all duration-200 text-base sm:text-lg touch-target shadow-sm focus:shadow-md"
             aria-label="Search website"
           />
           {searchQuery && (
@@ -145,7 +145,7 @@ export default function SearchBar({ isOpen, onClose, className = '' }: SearchBar
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 rounded-full bg-gray-300 group-hover:bg-secondary-400 transition-colors duration-200" />
+                  <div className="w-2 h-2 rounded-full bg-gray-300 group-hover:bg-[#FFBF00] transition-colors duration-200" />
                   <span>{suggestion}</span>
                 </div>
               </button>
@@ -169,7 +169,7 @@ export default function SearchBar({ isOpen, onClose, className = '' }: SearchBar
       {isSearching && (
         <div className="px-4 sm:px-6 py-8 sm:py-10 text-center">
           <div className="flex items-center justify-center space-x-3">
-            <Loader2 className="h-6 w-6 sm:h-8 sm:w-8 animate-spin text-secondary-500" />
+                         <Loader2 className="h-6 w-6 sm:h-8 sm:w-8 animate-spin text-[#FFBF00]" />
             <p className="text-sm sm:text-base text-gray-500">Searching...</p>
           </div>
         </div>

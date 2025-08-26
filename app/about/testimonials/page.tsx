@@ -96,10 +96,10 @@ export default function TestimonialsPage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20">
+      <section className="relative bg-[#008080] text-white py-20">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
-            <h1 className="text-4xl text-secondary-400 md:text-6xl font-bold mb-6">
+            <h1 className="text-4xl text-[#FFBF00] md:text-6xl font-bold mb-6">
               What Our Community Says
             </h1>
             <p className="text-xl text-gray-100 mb-8">
@@ -125,9 +125,9 @@ export default function TestimonialsPage() {
           <div className="max-w-4xl mx-auto">
             <Card className="text-center animate-fade-in p-8" style={{ animationDelay: '0.2s' }}>
               <div className="flex justify-center mb-6">
-                {[...Array(featuredTestimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-6 w-6 text-secondary-500 fill-current" />
-                ))}
+                                 {[...Array(featuredTestimonial.rating)].map((_, i) => (
+                   <Star key={i} className="h-6 w-6 text-[#FFBF00] fill-current" />
+                 ))}
               </div>
               
               <div className="mb-6">
@@ -180,9 +180,9 @@ export default function TestimonialsPage() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex justify-center mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-secondary-500 fill-current" />
-                  ))}
+                                     {[...Array(testimonial.rating)].map((_, i) => (
+                     <Star key={i} className="h-5 w-5 text-[#FFBF00] fill-current" />
+                   ))}
                 </div>
                 
                 <div className="mb-6">
@@ -269,10 +269,10 @@ export default function TestimonialsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-primary-600 text-white">
+      <section className="section-padding bg-teal-500 text-white">
         <div className="container-custom text-center">
           <div className="animate-fade-in">
-            <h2 className="text-3xl text-secondary-400  md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl text-[#FFBF00]  md:text-4xl font-bold mb-4">
               Join Our Community
             </h2>
             <p className="text-xl text-gray-100 mb-8 max-w-2xl mx-auto">

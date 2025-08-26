@@ -141,7 +141,7 @@ export default function MobileMenu({ items, isOpen, onToggle, onClose, className
         {/* Enhanced Menu Header */}
         <div className="flex items-center justify-between p-4 sm:p-6 bg-white/95 backdrop-blur-sm border-b border-gray-200/50 mobile-safe-area shadow-sm">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-secondary-400 rounded-lg flex items-center justify-center">
+                            <div className="w-8 h-8 bg-[#FFBF00] rounded-lg flex items-center justify-center">
               <BookOpen className="h-4 w-4 text-white" />
             </div>
             <h2 className="text-lg sm:text-xl font-elegant-heading text-primary-800">
@@ -150,7 +150,7 @@ export default function MobileMenu({ items, isOpen, onToggle, onClose, className
           </div>
           <button
             onClick={onClose}
-            className="group p-3 sm:p-3.5 text-primary-light hover:text-secondary-400 hover:bg-gray-50 active:bg-gray-100 rounded-xl transition-all duration-200 focus-visible focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 touch-target flex items-center justify-center no-select shadow-sm hover:shadow-md"
+                            className="group p-3 sm:p-3.5 text-primary-light hover:text-[#FFBF00] hover:bg-gray-50 active:bg-gray-100 rounded-xl transition-all duration-200 focus-visible focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 touch-target flex items-center justify-center no-select shadow-sm hover:shadow-md"
             aria-label="Close navigation menu"
             data-mobile-toggle
           >
@@ -174,10 +174,10 @@ export default function MobileMenu({ items, isOpen, onToggle, onClose, className
                         ref={index === 0 ? firstMenuItemRef : undefined}
                         onClick={() => handleSubmenuToggle(item.name)}
                         onKeyDown={(e) => handleKeyDown(e, item.name)}
-                        className={`group w-full text-left px-4 py-4 sm:py-5 rounded-xl font-elegant-body font-semibold transition-all duration-300 text-base sm:text-lg focus-visible focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 touch-target-large flex items-center justify-between no-select shadow-sm hover:shadow-md ${
+                        className={`group w-full text-left px-4 py-4 sm:py-5 rounded-xl font-elegant-body font-semibold transition-all duration-300 text-base sm:text-lg focus-visible focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 touch-target-large flex items-center justify-between no-select shadow-sm hover:shadow-md ${
                           isSubmenuOpen
-                            ? 'bg-gradient-to-r from-secondary-50 to-secondary-100 text-secondary-600 border-l-4 border-secondary-500 shadow-md' 
-                            : 'text-primary-light hover:bg-gray-50 hover:text-secondary-400 active:bg-gray-100'
+                            ? 'bg-gradient-to-r from-[#FFBF00]/10 to-[#FFBF00]/20 text-[#FFBF00] border-l-4 border-[#FFBF00] shadow-md' 
+                            : 'text-primary-light hover:bg-gray-50 hover:text-[#FFBF00] active:bg-gray-100'
                         }`}
                         aria-haspopup="true"
                         aria-expanded={isSubmenuOpen}
@@ -186,14 +186,14 @@ export default function MobileMenu({ items, isOpen, onToggle, onClose, className
                       >
                         <div className="flex items-center space-x-3">
                           <Icon className={`h-5 w-5 sm:h-6 sm:w-6 transition-colors duration-200 ${
-                            isSubmenuOpen ? 'text-secondary-500' : 'text-gray-400 group-hover:text-secondary-400'
+                            isSubmenuOpen ? 'text-[#FFBF00]' : 'text-gray-400 group-hover:text-[#FFBF00]'
                           }`} />
-                          <span className={isSubmenuOpen ? 'font-elegant-heading text-secondary-600' : ''}>
+                          <span className={isSubmenuOpen ? 'font-elegant-heading text-[#FFBF00]' : ''}>
                             {item.name}
                           </span>
                         </div>
                         <ChevronDown className={`h-5 w-5 transition-all duration-300 ${
-                          isSubmenuOpen ? 'rotate-180 text-secondary-500' : 'text-gray-400 group-hover:text-secondary-400'
+                          isSubmenuOpen ? 'rotate-180 text-[#FFBF00]' : 'text-gray-400 group-hover:text-[#FFBF00]'
                         }`} />
                       </button>
                       {isSubmenuOpen && (
@@ -208,17 +208,17 @@ export default function MobileMenu({ items, isOpen, onToggle, onClose, className
                               key={subItem.name}
                               href={subItem.href}
                               onClick={onClose}
-                              className={`group block px-4 py-3 sm:py-4 rounded-lg font-elegant-body font-semibold transition-all duration-300 text-base sm:text-lg focus-visible focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 touch-target flex items-center space-x-3 no-select shadow-sm hover:shadow-md ${
+                              className={`group block px-4 py-3 sm:py-4 rounded-lg font-elegant-body font-semibold transition-all duration-300 text-base sm:text-lg focus-visible focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 touch-target flex items-center space-x-3 no-select shadow-sm hover:shadow-md ${
                                 isActive(subItem.href)
-                                  ? 'bg-gradient-to-r from-secondary-50 to-accent-50 text-secondary-600 border-l-4 border-secondary-500 shadow-md' 
-                                  : 'text-primary-light hover:bg-gray-50 hover:text-secondary-400 active:bg-gray-100'
+                                  ? 'bg-gradient-to-r from-[#FFBF00]/10 to-accent-50 text-[#FFBF00] border-l-4 border-[#FFBF00] shadow-md' 
+                                  : 'text-primary-light hover:bg-gray-50 hover:text-[#FFBF00] active:bg-gray-100'
                               }`}
                               aria-current={isActive(subItem.href) ? 'page' : undefined}
                               role="menuitem"
                               style={{ animationDelay: `${(subIndex + 1) * 0.05}s` }}
                             >
-                              <div className="w-2 h-2 rounded-full bg-gray-300 group-hover:bg-secondary-400 transition-colors duration-200" />
-                              <span className={isActive(subItem.href) ? 'font-elegant-heading text-secondary-600' : ''}>
+                              <div className="w-2 h-2 rounded-full bg-gray-300 group-hover:bg-[#FFBF00] transition-colors duration-200" />
+                              <span className={isActive(subItem.href) ? 'font-elegant-heading text-[#FFBF00]' : ''}>
                                 {subItem.name}
                               </span>
                             </Link>
@@ -230,17 +230,17 @@ export default function MobileMenu({ items, isOpen, onToggle, onClose, className
                     <Link
                       href={item.href!}
                       onClick={onClose}
-                      className={`group block px-4 py-4 sm:py-5 rounded-xl font-elegant-body font-semibold transition-all duration-300 text-base sm:text-lg focus-visible focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 touch-target-large flex items-center space-x-3 no-select shadow-sm hover:shadow-md ${
+                      className={`group block px-4 py-4 sm:py-5 rounded-xl font-elegant-body font-semibold transition-all duration-300 text-base sm:text-lg focus-visible focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 touch-target-large flex items-center space-x-3 no-select shadow-sm hover:shadow-md ${
                         isItemActive
-                          ? 'bg-gradient-to-r from-secondary-50 to-accent-50 text-secondary-600 border-l-4 border-secondary-500 shadow-md' 
-                          : 'text-primary-light hover:bg-gray-50 hover:text-secondary-400 active:bg-gray-100'
+                          ? 'bg-gradient-to-r from-[#FFBF00]/10 to-accent-50 text-[#FFBF00] border-l-4 border-[#FFBF00] shadow-md' 
+                          : 'text-primary-light hover:bg-gray-50 hover:text-[#FFBF00] active:bg-gray-100'
                       }`}
                       aria-current={isItemActive ? 'page' : undefined}
                     >
                       <Icon className={`h-5 w-5 sm:h-6 sm:w-6 transition-colors duration-200 ${
-                        isItemActive ? 'text-secondary-500' : 'text-gray-400 group-hover:text-secondary-400'
+                        isItemActive ? 'text-[#FFBF00]' : 'text-gray-400 group-hover:text-[#FFBF00]'
                       }`} />
-                      <span className={isItemActive ? 'font-elegant-heading text-secondary-600' : ''}>
+                      <span className={isItemActive ? 'font-elegant-heading text-[#FFBF00]' : ''}>
                         {item.name}
                       </span>
                     </Link>

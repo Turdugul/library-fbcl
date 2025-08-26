@@ -11,18 +11,18 @@ export default function HomePage() {
     <div className="bg-white">
       {/* Hero Section */}
 <section className="relative hero-gradient text-white overflow-hidden">
-  <div className="absolute inset-0 bg-black/30"></div>
+  <div className="absolute inset-0 bg-[#008080]"></div>
   <div className="container-custom relative z-10">
     <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh] sm:min-h-[90vh] py-16 sm:py-20 lg:py-24">
       <div className="animate-fade-in">
         <div className="mb-2 sm:mb-6">
-          <span className="text-secondary-400 font-medium tracking-wide uppercase text-xs sm:text-sm bg-white/10 px-3 sm:px-4 py-2 rounded-full">
+          <span className="text-[#FFBF00] font-medium tracking-wide uppercase text-xs sm:text-sm bg-white/10 px-3 sm:px-4 py-2 rounded-full">
             Established 2013
           </span>
         </div>
-        <h1 className="text-responsive-3xl text-secondary-400 md:text-responsive-4xl font-elegant-heading mb-6 sm:mb-8 text-balance leading-tight">
+        <h1 className="text-responsive-3xl text-[#FFBF00] md:text-responsive-4xl font-elegant-heading mb-6 sm:mb-8 text-balance leading-tight">
         A Library for Every Story —
-  <span className="text-secondary-300 block">Come Find Yours</span>
+              <span className="text-[#FFBF00] block">Come Find Yours</span>
 </h1>
         <p className="text-responsive-lg mb-8 sm:mb-10 text-gray-100 font-elegant-body leading-relaxed max-w-2xl">
           Welcome to the Friern Barnet Community Library — where stories inspire, neighbors connect, and everyone is welcome. 
@@ -65,7 +65,7 @@ export default function HomePage() {
           />
           <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 bg-white text-primary-800 p-4 sm:p-6 border border-gray-200 shadow-lg rounded-lg">
             <p className="text-xs sm:text-sm font-elegant-heading mb-1">Since 2013</p>
-            <p className="text-xs text-secondary-dark font-elegant-body">Serving our community</p>
+                           <p className="text-xs text-gray-700 font-elegant-body">Serving our community</p>
           </div>
         </div>
       </div>
@@ -93,7 +93,7 @@ export default function HomePage() {
                   <h3 className="text-lg sm:text-xl font-elegant-heading mb-2 group-hover:text-primary-dark transition-colors duration-300">
                     {link.title}
                   </h3>
-                  <p className="text-secondary-dark font-elegant-body text-sm leading-relaxed">
+                  <p className="text-gray-700 font-elegant-body text-sm leading-relaxed">
                     {link.description}
                   </p>
                   <div className="mt-3 sm:mt-4 flex items-center text-accent group-hover:text-accent-hover transition-colors duration-300">
@@ -114,10 +114,10 @@ export default function HomePage() {
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
-  About FBCL
-</h2>
-<p className="text-responsive-lg text-secondary-dark mb-4 sm:mb-6 font-elegant-body leading-relaxed">
+                        <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6 text-[#FFBF00]">
+              About FBCL
+            </h2>
+             <p className="text-responsive-lg text-gray-700 mb-4 sm:mb-6 font-elegant-body leading-relaxed">
   At the Friern Barnet Community Library, we believe a library is more than just books — it’s a place to connect, learn, and grow together. 
   We're a volunteer-run, not-for-profit group dedicated to keeping our local library thriving for everyone in the community.
 </p>
@@ -154,7 +154,7 @@ export default function HomePage() {
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
+            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6 text-[#FFBF00]">
               Featured Events
             </h2>
             <p className="text-responsive-lg text-secondary-dark max-w-3xl mx-auto font-elegant-body">
@@ -175,10 +175,10 @@ export default function HomePage() {
                   className="w-full h-40 sm:h-48 object-cover mb-4 sm:mb-6 group-hover:scale-105 transition-transform duration-300 rounded-lg"
                 />
                 <h3 className="text-lg sm:text-xl font-elegant-heading mb-2 sm:mb-3">{event.title}</h3>
-                <div className="text-sm text-secondary-dark mb-3 sm:mb-4 font-elegant-body">
+                <div className="text-sm text-gray-700 mb-3 sm:mb-4 font-elegant-body">
                   {event.date} • {event.time}
                 </div>
-                <p className="text-secondary-dark mb-4 sm:mb-6 font-elegant-body leading-relaxed">{event.description}</p>
+                <p className="text-gray-700 mb-4 sm:mb-6 font-elegant-body leading-relaxed">{event.description}</p>
                 <Link href="/events" className="btn-secondary font-elegant-body inline-flex items-center">
                   Learn More
                   <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
@@ -199,10 +199,10 @@ export default function HomePage() {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
+            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6 text-[#FFBF00]">
               What Our Community Says
             </h2>
-            <p className="text-responsive-lg text-secondary-dark font-elegant-body">
+                         <p className="text-responsive-lg text-gray-700 font-elegant-body">
               Hear from the people who make our library community special.
             </p>
           </div>
@@ -215,7 +215,7 @@ export default function HomePage() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="text-3xl sm:text-4xl text-accent mb-4 sm:mb-6 font-elegant-accent">"</div>
-                <p className="text-secondary-dark mb-6 sm:mb-8 italic font-elegant-body leading-relaxed">
+                <p className="text-gray-700 mb-6 sm:mb-8 italic font-elegant-body leading-relaxed">
                   {testimonial.quote}
                 </p>
                 <div>
@@ -233,10 +233,10 @@ export default function HomePage() {
       </section>
 
       {/* Get Involved Section */}
-      <section className="section-padding bg-primary-800 text-white">
+      <section className="section-padding bg-[#008080] text-white">
         <div className="container-custom text-center">
           <div className="animate-fade-in">
-            <h2 className="text-responsive-3xl !text-warm md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
+            <h2 className="text-responsive-3xl text-[#FFBF00] md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
               Get Involved
             </h2>
             <p className="text-responsive-lg text-gray-100 mb-8 sm:mb-10 max-w-4xl mx-auto font-elegant-body leading-relaxed">
@@ -286,10 +286,10 @@ export default function HomePage() {
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
           <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
+            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6 text-[#FFBF00]">
               Awards & Recognition
             </h2>
-            <p className="text-responsive-lg text-secondary-dark max-w-3xl mx-auto font-elegant-body">
+            <p className="text-responsive-lg text-gray-700 max-w-3xl mx-auto font-elegant-body">
               We're proud of the recognition we've received for our commitment to community literacy and engagement.
             </p>
           </div>
@@ -308,15 +308,15 @@ export default function HomePage() {
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{award.title}</h3>
-                      <span className="text-xs sm:text-sm text-secondary-500 font-medium bg-secondary-50 px-2 sm:px-3 py-1 rounded-full">
+                                             <span className="text-xs sm:text-sm text-[#FFBF00] font-medium bg-[#FFBF00]/10 px-2 sm:px-3 py-1 rounded-full">
                         {award.date}
                       </span>
                     </div>
                     <p className="text-gray-600 mb-4 text-sm sm:text-base">{award.description}</p>
                     {award.certificate && (
                       <div className="flex items-center space-x-2">
-                        <Award className="h-4 w-4 text-secondary-500" />
-                        <span className="text-sm text-secondary-600">Certificate Available</span>
+                                               <Award className="h-4 w-4 text-[#FFBF00]" />
+                       <span className="text-sm text-[#FFBF00]">Certificate Available</span>
                       </div>
                     )}
                   </div>
@@ -331,10 +331,10 @@ export default function HomePage() {
       <section className="section-padding">
         <div className="container-custom">
           <div className="text-center mb-12 sm:mb-16 animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6">
+            <h2 className="text-responsive-3xl md:text-responsive-4xl font-elegant-heading mb-4 sm:mb-6 text-[#FFBF00]">
               What's On at FBCL?
             </h2>
-            <p className="text-responsive-lg text-secondary-dark max-w-3xl mx-auto font-elegant-body">
+            <p className="text-responsive-lg text-gray-700 max-w-3xl mx-auto font-elegant-body">
               Discover our diverse range of classes, workshops, and community events.
             </p>
           </div>
@@ -348,7 +348,7 @@ export default function HomePage() {
               >
                 <div className="text-2xl sm:text-4xl mb-2 sm:mb-4">{activity.icon}</div>
                 <h3 className="text-sm sm:text-lg font-elegant-heading text-primary-dark mb-1 sm:mb-2">{activity.name}</h3>
-                <p className="text-xs sm:text-sm text-secondary-dark font-elegant-body">{activity.description}</p>
+                <p className="text-xs sm:text-sm text-gray-700 font-elegant-body">{activity.description}</p>
               </Card>
             ))}
           </div>
@@ -362,7 +362,7 @@ export default function HomePage() {
             <div className="text-center animate-fade-in p-4 sm:p-6">
               <MapPin className="h-6 w-6 sm:h-8 sm:w-8 text-accent mx-auto mb-3 sm:mb-4" />
               <h3 className="text-lg sm:text-xl font-elegant-heading mb-2">Visit Us</h3>
-              <p className="text-secondary-dark font-elegant-body text-sm sm:text-base">
+              <p className="text-gray-700 font-elegant-body text-sm sm:text-base">
                 Friern Barnet Community Library<br />
                 Friern Barnet, London
               </p>
@@ -370,7 +370,7 @@ export default function HomePage() {
             <div className="text-center animate-fade-in stagger-1 p-4 sm:p-6">
               <Clock className="h-6 w-6 sm:h-8 sm:w-8 text-accent mx-auto mb-3 sm:mb-4" />
               <h3 className="text-lg sm:text-xl font-elegant-heading mb-2">Opening Hours</h3>
-              <p className="text-secondary-dark font-elegant-body text-sm sm:text-base">
+              <p className="text-gray-700 font-elegant-body text-sm sm:text-base">
                 Monday - Friday: 9:00 AM - 6:00 PM<br />
                 Saturday: 10:00 AM - 4:00 PM
               </p>
@@ -378,7 +378,7 @@ export default function HomePage() {
             <div className="text-center animate-fade-in stagger-2 p-4 sm:p-6">
               <Phone className="h-6 w-6 sm:h-8 sm:w-8 text-accent mx-auto mb-3 sm:mb-4" />
               <h3 className="text-lg sm:text-xl font-elegant-heading mb-2">Contact</h3>
-              <p className="text-secondary-dark font-elegant-body text-sm sm:text-base">
+              <p className="text-gray-700 font-elegant-body text-sm sm:text-base">
                 Get in touch with our team<br />
                 for more information
               </p>

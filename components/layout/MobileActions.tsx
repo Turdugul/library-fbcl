@@ -22,7 +22,7 @@ export default function MobileActions({
       {/* Search Button */}
       <button
         onClick={onSearchToggle}
-        className="group relative p-3 sm:p-3.5 text-primary-light hover:text-secondary-400 hover:bg-gray-50 active:bg-gray-100 rounded-xl transition-all duration-200 focus-visible focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 touch-target flex items-center justify-center no-select shadow-sm hover:shadow-md"
+        className="group relative p-3 sm:p-3.5 text-primary-light hover:text-[#FFBF00] hover:bg-gray-50 active:bg-gray-100 rounded-xl transition-all duration-200 focus-visible focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 touch-target flex items-center justify-center no-select shadow-sm hover:shadow-md"
         aria-label="Search website"
         aria-expanded={isSearchOpen}
         aria-controls="search-bar"
@@ -34,7 +34,7 @@ export default function MobileActions({
       {/* Hamburger Menu Button */}
       <button
         onClick={onMenuToggle}
-        className="group relative p-3 sm:p-3.5 text-primary-light hover:text-secondary-400 hover:bg-gray-50 active:bg-gray-100 rounded-xl transition-all duration-200 focus-visible focus:ring-2 focus:ring-secondary-400 focus:ring-offset-2 touch-target flex items-center justify-center no-select shadow-sm hover:shadow-md"
+        className="group relative p-3 sm:p-3.5 text-primary-light hover:text-[#FFBF00] hover:bg-gray-50 active:bg-gray-100 rounded-xl transition-all duration-200 focus-visible focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 touch-target flex items-center justify-center no-select shadow-sm hover:shadow-md"
         aria-label="Toggle navigation menu"
         aria-expanded={isMenuOpen}
         aria-controls="mobile-menu"

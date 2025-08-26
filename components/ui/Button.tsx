@@ -17,10 +17,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const baseClasses = 'inline-flex items-center justify-center font-medium rounded-none transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed font-elegant-body relative overflow-hidden group focus-visible'
     
     const variants = {
-      primary: 'bg-primary-800 hover:bg-primary-900 text-white focus:ring-primary-500 border border-primary-800 hover:border-primary-900 transform hover:scale-105 active:scale-95 shadow-sm hover:shadow-md',
-      secondary: 'bg-secondary-500 hover:bg-secondary-600 text-white focus:ring-secondary-500 border border-secondary-500 hover:border-secondary-600 transform hover:scale-105 active:scale-95 shadow-sm hover:shadow-md',
-      outline: 'border-2 border-primary-800 text-primary-800 hover:bg-primary-800 hover:text-white focus:ring-primary-500 transform hover:scale-105 active:scale-95',
-      ghost: 'text-primary-light hover:bg-gray-50 hover:text-accent focus:ring-gray-500 transform hover:scale-105 active:scale-95'
+      primary: 'bg-teal-800 hover:bg-teal-900 text-white focus:ring-teal-500 border border-teal-800 hover:border-teal-900 transform hover:scale-105 active:scale-95 shadow-sm hover:shadow-md',
+      secondary: 'bg-[#FFBF00] hover:bg-[#E6AC00] text-white focus:ring-[#FFBF00] border border-[#FFBF00] hover:border-[#E6AC00] transform hover:scale-105 active:scale-95 shadow-sm hover:shadow-md',
+      outline: 'border-2 border-teal-800 text-teal-800 hover:bg-teal-800 hover:text-white focus:ring-teal-500 transform hover:scale-105 active:scale-95',
+      ghost: 'text-teal-light hover:bg-gray-50 hover:text-accent focus:ring-gray-500 transform hover:scale-105 active:scale-95'
     }
     
     const sizes = {
