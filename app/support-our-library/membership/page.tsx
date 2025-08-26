@@ -10,10 +10,10 @@ export default function MembershipPage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 sm:py-20">
+      <section className="relative bg-[#008080] text-white py-16 sm:py-20">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
-            <h1 className="text-responsive-4xl md:text-responsive-6xl text-secondary-400 font-bold mb-4 sm:mb-6">
+            <h1 className="text-responsive-4xl md:text-responsive-6xl text-[#FFBF00] font-bold mb-4 sm:mb-6">
               Library Membership
             </h1>
             <p className="text-responsive-lg text-gray-100 mb-6 sm:mb-8">
@@ -78,30 +78,30 @@ export default function MembershipPage() {
       <MembershipForms />
 
       {/* Additional Information */}
-      <section className="section-padding bg-primary-50">
+      <section className="section-padding bg-cyan-100">
         <div className="container-custom">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-responsive-2xl md:text-responsive-3xl font-bold mb-6 text-primary-800">
+            <h2 className="text-responsive-2xl md:text-responsive-3xl font-bold mb-6 text-[#008080]">
               What Happens Next?
             </h2>
             <div className="grid md:grid-cols-3 gap-6 text-gray-700">
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary-600">1</span>
+                <div className="w-16 h-16 bg-[#FFBF00]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-[#FFBF00]">1</span>
                 </div>
                 <h3 className="font-semibold mb-2">Submit Application</h3>
                 <p className="text-sm">Complete and submit your membership form online</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary-600">2</span>
+                <div className="w-16 h-16 bg-[#FFBF00]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-[#FFBF00]">2</span>
                 </div>
                 <h3 className="font-semibold mb-2">We'll Contact You</h3>
                 <p className="text-sm">We'll reach out to arrange collection of your membership card</p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary-600">3</span>
+                <div className="w-16 h-16 bg-[#FFBF00]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-[#FFBF00]">3</span>
                 </div>
                 <h3 className="font-semibold mb-2">Visit the Library</h3>
                 <p className="text-sm">Bring your ID and payment to collect your membership</p>

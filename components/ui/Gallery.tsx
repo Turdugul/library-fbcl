@@ -88,7 +88,7 @@ export function Gallery({
             </h2>
           )}
           {description && (
-            <p className="text-responsive-lg text-secondary-dark max-w-3xl mx-auto font-elegant-body">
+                         <p className="text-responsive-lg text-gray-600 max-w-3xl mx-auto font-elegant-body">
               {description}
             </p>
           )}
@@ -118,7 +118,7 @@ export function Gallery({
                 <div className="absolute inset-0 flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="text-white">
                     {showTitles && image.title && (
-                      <h3 className="text-sm text-secondary-300 sm:text-base font-semibold mb-1">
+                      <h3 className="text-sm text-[#FFBF00] sm:text-base font-semibold mb-1">
                         {image.title}
                       </h3>
                     )}
@@ -191,7 +191,7 @@ export function Gallery({
               {(selectedImage.title || selectedImage.description) && (
                 <div className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-4 rounded-b-lg">
                   {selectedImage.title && (
-                    <h3 className="text-lg text-secondary-300 first-letter:font-semibold mb-2">
+                    <h3 className="text-lg text-[#FFBF00] first-letter:font-semibold mb-2">
                       {selectedImage.title}
                     </h3>
                   )}

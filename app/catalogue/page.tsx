@@ -65,7 +65,7 @@ const mainNavigationButtons = [
     description: 'Expert guides to help you navigate and discover our specialized collections.',
     icon: BookMarked,
     href: '/catalogue/guides',
-    color: 'bg-secondary-100 text-secondary-600',
+         color: 'bg-[#FFBF00]/10 text-[#FFBF00]',
     buttonText: 'Browse Guides',
   },
   {
@@ -89,10 +89,10 @@ export default function CataloguePage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 sm:py-20">
+      <section className="relative bg-[#008080] text-white py-16 sm:py-20">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
-            <h1 className="text-responsive-4xl  text-secondary-400 md:text-responsive-6xl font-elegant-heading mb-4 sm:mb-6">
+            <h1 className="text-responsive-4xl  text-[#FFBF00] md:text-responsive-6xl font-elegant-heading mb-4 sm:mb-6">
               Our Catalogue
             </h1>
             <p className="text-responsive-lg text-gray-100 mb-6 sm:mb-8 font-elegant-body">
@@ -194,7 +194,7 @@ export default function CataloguePage() {
               >
                 <div className="flex justify-center mb-3 sm:mb-4">
                   {[...Array(collection.rating)].map((_, i) => (
-                    <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 text-secondary-500 fill-current" />
+                    <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 text-[#FFBF00] fill-current" />
                   ))}
                 </div>
                 

@@ -16,7 +16,7 @@
     line-height: 1.6;
     color: #334155;
     font-weight: 400;
-    background-color: #f5f3ef;
+    background-color: #e0f2fe;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -40,7 +40,7 @@
     position: absolute;
     top: -40px;
     left: 6px;
-    background: #e55304;
+    background: teal;
     color: white;
     padding: 8px;
     text-decoration: none;
@@ -60,11 +60,11 @@
   }
   
   .btn-secondary {
-    @apply bg-secondary-500 hover:bg-secondary-600 text-white hover:text-white font-medium py-3 px-6 rounded-none transition-all duration-300 focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2 border border-secondary-500 hover:border-secondary-600 transform hover:scale-105 active:scale-95;
+    @apply bg-[#FFBF00] hover:bg-[#E6AC00] text-white hover:text-white font-medium py-3 px-6 rounded-none transition-all duration-300 focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 border border-[#FFBF00] hover:border-[#E6AC00] transform hover:scale-105 active:scale-95;
   }
   
   .btn-outline {
-    @apply border-2 border-primary-800 text-primary-800 hover:bg-primary-800 hover:text-white font-medium py-3 px-6 rounded-none transition-all duration-300 focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transform hover:scale-105 active:scale-95;
+    @apply border-2 border-[#FFBF00] text-[#FFBF00] hover:bg-[#FFBF00] hover:text-white font-medium py-3 px-6 rounded-none transition-all duration-300 focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 transform hover:scale-105 active:scale-95;
   }
   
   .btn-ghost {
@@ -98,7 +98,15 @@
     font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
     font-weight: 600;
     letter-spacing: -0.02em;
-    color: #d97706;
+    color: #FFBF00;
+  }
+  
+  .heading-gold {
+    color: #FFBF00;
+  }
+  
+  .heading-gold-hover:hover {
+    color: #E6AC00;
   }
   
   .font-elegant-body {
@@ -271,7 +279,7 @@
   
   /* Improved focus states for mobile */
   .mobile-focus-ring {
-    @apply focus-visible:ring-2 focus-visible:ring-secondary-400 focus-visible:ring-offset-2 focus-visible:outline-none;
+    @apply focus-visible:ring-2 focus-visible:ring-[#FFBF00] focus-visible:ring-offset-2 focus-visible:outline-none;
   }
   
   /* Enhanced mobile button states */
@@ -285,6 +293,31 @@
   
   .mobile-button:active {
     @apply transform scale-95;
+  }
+  
+  /* Custom Color Utilities */
+  .text-gold {
+    color: #FFBF00;
+  }
+  
+  .bg-gold {
+    background-color: #FFBF00;
+  }
+  
+  .border-gold {
+    border-color: #FFBF00;
+  }
+  
+  .hover\:text-gold:hover {
+    color: #FFBF00;
+  }
+  
+  .hover\:bg-gold:hover {
+    background-color: #FFBF00;
+  }
+  
+  .hover\:border-gold:hover {
+    border-color: #FFBF00;
   }
   
   /* Prevent text selection on mobile buttons */

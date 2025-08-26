@@ -115,7 +115,7 @@ export default function NewBooksPage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-accent-600 to-accent-800 text-white py-16 sm:py-20">
+      <section className="relative bg-[#008080] text-white py-16 sm:py-20">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
             <h1 className="text-responsive-4xl text-white md:text-responsive-6xl font-elegant-heading mb-4 sm:mb-6">
@@ -157,12 +157,12 @@ export default function NewBooksPage() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex justify-center mb-4">
-                  {[...Array(Math.floor(book.rating))].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-secondary-500 fill-current" />
-                  ))}
-                  {book.rating % 1 !== 0 && (
-                    <Star className="h-4 w-4 text-secondary-500 fill-current opacity-50" />
-                  )}
+                                     {[...Array(Math.floor(book.rating))].map((_, i) => (
+                     <Star key={i} className="h-4 w-4 text-[#FFBF00] fill-current" />
+                   ))}
+                   {book.rating % 1 !== 0 && (
+                     <Star className="h-4 w-4 text-[#FFBF00] fill-current opacity-50" />
+                   )}
                 </div>
                 
                 <img

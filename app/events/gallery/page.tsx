@@ -91,16 +91,16 @@ export default function AboutGalleryPage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 sm:py-20">
+      <section className="relative bg-[#008080] text-white py-16 sm:py-20">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
             <div className="mb-6">
-              <Link href="/events" className="inline-flex items-center text-secondary-300 hover:text-white transition-colors mb-4">
+                             <Link href="/events" className="inline-flex items-center text-[#FFBF00] hover:text-white transition-colors mb-4">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Events
               </Link>
             </div>
-            <h1 className="text-responsive-3xl md:text-responsive-6xl  text-secondary-400  font-bold mb-4 sm:mb-6">
+            <h1 className="text-responsive-3xl md:text-responsive-6xl  text-[#FFBF00]  font-bold mb-4 sm:mb-6">
               Library Gallery
             </h1>
             <p className="text-responsive-lg text-gray-100 mb-6 sm:mb-8">
@@ -129,7 +129,7 @@ export default function AboutGalleryPage() {
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 flex items-end">
                     <div className="p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <h3 className="font-semibold text-secondary-300 text-sm sm:text-base mb-1">{image.title}</h3>
+                                             <h3 className="font-semibold text-[#FFBF00] text-sm sm:text-base mb-1">{image.title}</h3>
                       <p className="text-xs sm:text-sm text-gray-200">{image.alt}</p>
                     </div>
                   </div>

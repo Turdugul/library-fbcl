@@ -73,7 +73,7 @@ export function Carousel({
           {images[currentIndex].title && (
             <div className="absolute inset-0 hover:bg-yellow-400/40 flex items-end">
               <div className="p-1 rounded-3xl sm:p-4  bg-black/40">
-                <h3 className="text-lg text-secondary-300 sm:text-xl font-semibold mb-2">
+                                 <h3 className="text-lg text-[#FFBF00] sm:text-xl font-semibold mb-2">
                   {images[currentIndex].title}
                 </h3>
               </div>

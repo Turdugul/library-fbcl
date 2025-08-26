@@ -96,7 +96,7 @@ export default function GuidesPage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-secondary-600 to-secondary-800 text-white py-16 sm:py-20">
+      <section className="relative bg-[#008080] text-white py-16 sm:py-20">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
             <h1 className="text-responsive-4xl text-white md:text-responsive-6xl font-elegant-heading mb-4 sm:mb-6">
@@ -138,7 +138,7 @@ export default function GuidesPage() {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex justify-center mb-3 sm:mb-4">
-                  <subject.icon className="h-8 w-8 sm:h-10 sm:w-10 text-secondary-600" />
+                                     <subject.icon className="h-8 w-8 sm:h-10 sm:w-10 text-[#FFBF00]" />
                 </div>
                 <h3 className="text-sm sm:text-base font-elegant-heading mb-1 sm:mb-2">{subject.name}</h3>
                 <p className="text-xs sm:text-sm text-gray-500 font-elegant-body">{subject.count} guides</p>
@@ -169,7 +169,7 @@ export default function GuidesPage() {
               >
                 <div className="flex justify-center mb-4">
                   {[...Array(guide.rating)].map((_, i) => (
-                    <Star key={i} className="h-4 w-4 text-secondary-500 fill-current" />
+                    <Star key={i} className="h-4 w-4 text-[#FFBF00] fill-current" />
                   ))}
                 </div>
                 
@@ -270,7 +270,7 @@ export default function GuidesPage() {
                   Browse Catalogue
                 </Link>
               </Button>
-              <Button variant="outline" asChild className="border-white text-white hover:bg-white hover:text-secondary-600">
+                               <Button variant="outline" asChild className="border-white text-white hover:bg-white hover:text-[#FFBF00]">
                 <Link href="/contact">
                   Contact Librarian
                 </Link>

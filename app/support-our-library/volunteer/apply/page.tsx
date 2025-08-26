@@ -13,9 +13,15 @@ export default function VolunteerApplyPage() {
   }
 
   return (
+    <section className="section-padding bg-cyan-100">
+        <div className="container-custom mt-16">
+        <div className='max-w-2xl m-auto'>
     <FormBuilder
       config={volunteerFormConfig}
       onSubmit={handleSubmit}
     />
+    </div>
+        </div>
+    </section>
   )
 } 

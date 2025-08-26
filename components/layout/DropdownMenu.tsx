@@ -141,7 +141,7 @@ export default function DropdownMenu({ item, className = '', onLinkClick }: Drop
         onBlur={handleBlur}
         className={`nav-link flex items-center space-x-1 ${
           isOpen 
-            ? 'font-elegant-heading text-secondary-500' 
+                               ? 'font-elegant-heading text-[#FFBF00]' 
             : 'text-primary-light hover:text-accent'
         }`}
         aria-haspopup="true"
@@ -184,7 +184,7 @@ export default function DropdownMenu({ item, className = '', onLinkClick }: Drop
               }}
               className={`submenu-item group relative block px-4 py-3 text-sm md:text-base hover:bg-gradient-to-r hover:from-secondary-50 hover:to-accent-50 transition-all duration-200 focus:bg-gradient-to-r focus:from-secondary-50 focus:to-accent-50 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-inset ${
                 isActive(subItem.href)
-                  ? 'text-secondary-500 bg-secondary-50/50' 
+                                     ? 'text-[#FFBF00] bg-[#FFBF00]/10' 
                   : 'text-primary-light hover:text-accent'
               }`}
               role="menuitem"

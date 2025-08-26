@@ -30,7 +30,7 @@ export default function NavLinks({ items, className = '', onLinkClick }: NavLink
               onClick={onLinkClick}
               className={`nav-link group relative ${
                 isActive(item.href!) 
-                  ? 'font-elegant-heading text-secondary-500' 
+                                     ? 'font-elegant-heading text-[#FFBF00]' 
                   : 'text-primary-light hover:text-accent'
               }`}
               aria-current={isActive(item.href!) ? 'page' : undefined}

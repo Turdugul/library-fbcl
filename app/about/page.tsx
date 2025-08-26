@@ -9,13 +9,13 @@ export default function AboutPage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 sm:py-20">
+      <section className="relative bg-[#008080] text-white py-16 sm:py-20">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 sm:p-4 mb-4 sm:mb-6 inline-block">
-              <span className="text-lg sm:text-2xl font-bold text-secondary-300">Celebrating Our 12th Anniversary!</span>
+                             <span className="text-lg sm:text-2xl font-bold text-[#FFBF00]">Celebrating Our 12th Anniversary!</span>
             </div>
-            <h1 className="text-responsive-3xl md:text-responsive-6xl  text-secondary-400  font-bold mb-4 sm:mb-6">
+            <h1 className="text-responsive-3xl md:text-responsive-6xl  text-[#FFBF00]  font-bold mb-4 sm:mb-6">
               About FBCL
             </h1>
             <p className="text-responsive-lg text-gray-100 mb-6 sm:mb-8">
@@ -197,15 +197,15 @@ export default function AboutPage() {
                   <div className="flex-1">
                     <div className="flex items-center justify-between mb-3">
                       <h3 className="text-lg sm:text-xl font-semibold text-gray-900">{award.title}</h3>
-                      <span className="text-xs sm:text-sm text-secondary-500 font-medium bg-secondary-50 px-2 sm:px-3 py-1 rounded-full">
+                                             <span className="text-xs sm:text-sm text-[#FFBF00] font-medium bg-[#FFBF00]/10 px-2 sm:px-3 py-1 rounded-full">
                         {award.date}
                       </span>
                     </div>
                     <p className="text-gray-600 mb-4 text-sm sm:text-base">{award.description}</p>
                     {award.certificate && (
                       <div className="flex items-center space-x-2">
-                        <Award className="h-4 w-4 text-secondary-500" />
-                        <span className="text-sm text-secondary-600">Certificate Available</span>
+                                               <Award className="h-4 w-4 text-[#FFBF00]" />
+                       <span className="text-sm text-[#FFBF00]">Certificate Available</span>
                       </div>
                     )}
                   </div>
@@ -219,10 +219,10 @@ export default function AboutPage() {
 
 
       {/* CTA Section */}
-      <section className="section-padding bg-primary-600 text-white">
+      <section className="section-padding bg-[#008080] text-white">
         <div className="container-custom text-center">
           <div className="animate-fade-in">
-            <h2 className="text-responsive-3xl text-secondary-400 md:text-responsive-4xl font-bold mb-4">
+            <h2 className="text-responsive-3xl text-[#FFBF00] md:text-responsive-4xl font-bold mb-4">
               Join Our Community
             </h2>
             <p className="text-responsive-lg text-gray-100 mb-6 sm:mb-8 max-w-2xl mx-auto">

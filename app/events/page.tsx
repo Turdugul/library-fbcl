@@ -28,10 +28,10 @@ export default function EventsPage() {
   return (
     <div className="pt-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16 sm:py-20">
+      <section className="relative bg-[#008080] text-white py-16 sm:py-20">
         <div className="container-custom">
           <div className="text-center max-w-4xl mx-auto animate-fade-in">
-            <h1 className="text-responsive-4xl md:text-responsive-6xl text-secondary-400 font-bold mb-4 sm:mb-6">
+            <h1 className="text-responsive-4xl md:text-responsive-6xl text-[#FFBF00] font-bold mb-4 sm:mb-6">
               Library Events
             </h1>
             <p className="text-responsive-lg text-gray-100 mb-6 sm:mb-8">
@@ -57,7 +57,7 @@ export default function EventsPage() {
             <Card className="animate-fade-in p-6 sm:p-8" style={{ animationDelay: '0.2s' }}>
               <div className="flex justify-center mb-4 sm:mb-6">
                 {[...Array(featuredEvent.rating)].map((_, i) => (
-                  <Star key={i} className="h-4 w-4 sm:h-6 sm:w-6 text-secondary-500 fill-current" />
+                                     <Star key={i} className="h-4 w-4 sm:h-6 sm:w-6 text-[#FFBF00] fill-current" />
                 ))}
               </div>
               
@@ -133,7 +133,7 @@ export default function EventsPage() {
               >
                 <div className="flex justify-center mb-3 sm:mb-4">
                   {[...Array(event.rating)].map((_, i) => (
-                    <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 text-secondary-500 fill-current" />
+                    <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 text-[#FFBF00] fill-current" />
                   ))}
                 </div>
                 
@@ -203,7 +203,7 @@ export default function EventsPage() {
               >
                 <div className="flex justify-center mb-3 sm:mb-4">
                   {[...Array(event.rating)].map((_, i) => (
-                    <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 text-secondary-500 fill-current" />
+                    <Star key={i} className="h-3 w-3 sm:h-4 sm:w-4 text-[#FFBF00] fill-current" />
                   ))}
                 </div>
                 
@@ -276,7 +276,7 @@ export default function EventsPage() {
       <section className="section-padding bg-primary-600 text-white">
         <div className="container-custom text-center">
           <div className="animate-fade-in">
-            <h2 className="text-responsive-3xl md:text-responsive-4xl font-bold text-secondary-400 mb-4">
+            <h2 className="text-responsive-3xl md:text-responsive-4xl font-bold text-[#FFBF00] mb-4">
               Stay Updated
             </h2>
             <p className="text-responsive-lg text-gray-100 mb-6 sm:mb-8 max-w-2xl mx-auto">
