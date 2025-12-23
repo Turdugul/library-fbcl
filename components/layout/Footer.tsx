@@ -1,8 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
-import Logo from '@/components/ui/SimpleLogo'
 import { 
   MapPin, 
   Phone, 
@@ -17,6 +15,7 @@ import {
   FileText,
   ExternalLink
 } from 'lucide-react'
+import LogoComponent from './Logo'
 
 const quickLinks = [
   { name: 'Home', href: '/' },
@@ -66,14 +65,18 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#008080] text-white mt-10">
+    <footer className="bg-[#008080] text-white">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 py-16">
           {/* Logo and Description */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center space-x-3 mb-4">
-              <Logo size="medium" showText={false} />
-            </Link>
+            <div className="mb-4">
+              <LogoComponent 
+                showLink={true}
+                priority={false}
+                size="small"
+              />
+            </div>
             <p className="text-gray-300 mb-6 font-elegant-body leading-relaxed">
               FBCL — A welcoming space for all, where stories are shared, learning is celebrated, and community feels like home.
             </p>

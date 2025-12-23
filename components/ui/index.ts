@@ -6,8 +6,8 @@ export { default as Textarea } from './Textarea'
 export { default as Select } from './Select'
 export { Carousel } from './Carousel'
 export { Gallery } from './Gallery'
+export { default as OptimizedImage } from './OptimizedImage'
 export { default as ScrollToTop } from './ScrollToTop'
-export { default as Logo } from './SimpleLogo'
 
 // Loading Components
 export { default as LoadingSpinner, Skeleton, PageLoader, ContentLoader, CardLoader } from './LoadingSpinner'

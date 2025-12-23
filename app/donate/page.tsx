@@ -78,7 +78,7 @@ export default function DonatePage() {
 
   const handleDonation = (amount: number) => {
     // In a real implementation, this would integrate with a payment processor
-    console.log(`Processing donation of £${amount}`)
+    // TODO: Integrate with payment processor (Stripe, PayPal, etc.)
     alert(`Thank you for your donation of £${amount}! This would redirect to a payment processor in production.`)
   }
 

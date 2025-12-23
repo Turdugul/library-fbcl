@@ -27,7 +27,6 @@ const getIcon = (itemName: string) => {
 }
 
 export default function MobileMenu({ items, isOpen, onToggle, onClose, className = '' }: MobileMenuProps) {
-  console.log('MobileMenu render - isOpen:', isOpen)
   const pathname = usePathname()
   const [openSubmenu, setOpenSubmenu] = useState<string | null>(null)
   const [isAnimating, setIsAnimating] = useState(false)
@@ -208,7 +207,7 @@ export default function MobileMenu({ items, isOpen, onToggle, onClose, className
                               key={subItem.name}
                               href={subItem.href}
                               onClick={onClose}
-                              className={`group block px-4 py-3 sm:py-4 rounded-lg font-elegant-body font-semibold transition-all duration-300 text-base sm:text-lg focus-visible focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 touch-target flex items-center space-x-3 no-select shadow-sm hover:shadow-md ${
+                              className={`group flex items-center space-x-3 px-4 py-3 sm:py-4 rounded-lg font-elegant-body font-semibold transition-all duration-300 text-base sm:text-lg focus-visible focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 touch-target no-select shadow-sm hover:shadow-md ${
                                 isActive(subItem.href)
                                   ? 'bg-gradient-to-r from-[#FFBF00]/10 to-accent-50 text-[#FFBF00] border-l-4 border-[#FFBF00] shadow-md' 
                                   : 'text-primary-light hover:bg-gray-50 hover:text-[#FFBF00] active:bg-gray-100'
@@ -230,7 +229,7 @@ export default function MobileMenu({ items, isOpen, onToggle, onClose, className
                     <Link
                       href={item.href!}
                       onClick={onClose}
-                      className={`group block px-4 py-4 sm:py-5 rounded-xl font-elegant-body font-semibold transition-all duration-300 text-base sm:text-lg focus-visible focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 touch-target-large flex items-center space-x-3 no-select shadow-sm hover:shadow-md ${
+                      className={`group flex items-center space-x-3 px-4 py-4 sm:py-5 rounded-xl font-elegant-body font-semibold transition-all duration-300 text-base sm:text-lg focus-visible focus:ring-2 focus:ring-[#FFBF00] focus:ring-offset-2 touch-target-large no-select shadow-sm hover:shadow-md ${
                         isItemActive
                           ? 'bg-gradient-to-r from-[#FFBF00]/10 to-accent-50 text-[#FFBF00] border-l-4 border-[#FFBF00] shadow-md' 
                           : 'text-primary-light hover:bg-gray-50 hover:text-[#FFBF00] active:bg-gray-100'

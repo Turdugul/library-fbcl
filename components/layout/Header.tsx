@@ -38,7 +38,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 lg:h-24 min-w-0">
           {/* Logo - Enhanced responsive sizing */}
           <div className="flex-shrink-0 relative z-10">
-            <LogoComponent />
+            <LogoComponent priority={true} />
           </div>
 
           {/* Desktop Navigation - Hidden on mobile/tablet */}
