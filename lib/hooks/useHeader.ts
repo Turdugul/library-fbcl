@@ -6,21 +6,6 @@ export function useHeader() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const [isMobile, setIsMobile] = useState(false)
-
-  // Check if we're on mobile
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 1024)
-    }
-
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    
-    return () => {
-      window.removeEventListener('resize', checkMobile)
-    }
-  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +36,7 @@ export function useHeader() {
       window.removeEventListener('resize', handleResize)
       document.removeEventListener('keydown', handleEscape)
     }
-  }, [isMenuOpen])
+  }, [])
 
   const handleMenuToggle = useCallback(() => {
     setIsMenuOpen(prev => !prev)
@@ -75,7 +60,6 @@ export function useHeader() {
     isScrolled,
     isMenuOpen,
     isSearchOpen,
-    isMobile,
     handleMenuToggle,
     handleMenuClose,
     handleSearchToggle,

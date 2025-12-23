@@ -1,11 +1,29 @@
-'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, MapPin, Clock, Phone, ChevronRight, Award } from 'lucide-react'
-import { Button, Card, Carousel, Gallery } from '@/components/ui'
+import { Button, Card } from '@/components/ui'
+import LazyGallery from '@/components/lazy/LazyGallery'
 import { featuredEvents, testimonials, quickLinks, activities, galleryImages, awards, homeGalleryImages } from '@/lib/data'
+import { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'Home',
+  description: 'Welcome to the Friern Barnet Community Library - where stories inspire, neighbors connect, and everyone is welcome.',
+  openGraph: {
+    title: 'Friern Barnet Community Library',
+    description: 'Welcome to the Friern Barnet Community Library - where stories inspire, neighbors connect, and everyone is welcome.',
+    images: [
+      {
+        url: '/library.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Friern Barnet Community Library',
+      },
+    ],
+  },
+}
+
+// This page uses static data, so it can be statically generated
 export default function HomePage() {
   return (
     <div className="bg-white">
@@ -135,15 +153,25 @@ export default function HomePage() {
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4 sm:gap-6 animate-fade-in stagger-1">
-              <img
-                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=300&h=300&fit=crop"
+              <Image
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=600&h=600&fit=crop&auto=format"
                 alt="Volunteers working"
+                width={300}
+                height={300}
                 className="w-full h-48 sm:h-64 object-cover hover-scale rounded-lg"
+                sizes="(max-width: 640px) 50vw, 25vw"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop"
+              <Image
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=600&fit=crop&auto=format"
                 alt="Community event"
+                width={300}
+                height={300}
                 className="w-full h-48 sm:h-64 object-cover mt-8 hover-scale rounded-lg"
+                sizes="(max-width: 640px) 50vw, 25vw"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
               />
             </div>
           </div>
@@ -169,10 +197,15 @@ export default function HomePage() {
                 className="card group animate-fade-in hover-lift p-4 sm:p-6"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <img
+                <Image
                   src={event.image}
                   alt={event.title}
+                  width={400}
+                  height={300}
                   className="w-full h-40 sm:h-48 object-cover mb-4 sm:mb-6 group-hover:scale-105 transition-transform duration-300 rounded-lg"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
                 <h3 className="text-lg sm:text-xl font-elegant-heading mb-2 sm:mb-3">{event.title}</h3>
                 <div className="text-sm text-gray-700 mb-3 sm:mb-4 font-elegant-body">
@@ -262,7 +295,7 @@ export default function HomePage() {
       {/* Gallery Section */}
       <section className="section-padding">
         <div className="container-custom">
-          <Gallery
+          <LazyGallery
             images={homeGalleryImages}
             title="Our Library Gallery"
             description="Take a virtual tour of our community library and see the spaces where learning and community come together."
@@ -299,10 +332,15 @@ export default function HomePage() {
               <Card key={award.id} className="animate-fade-in hover-lift p-4 sm:p-6" style={{ animationDelay: `${index * 0.1}s` }}>
                 <div className="flex flex-col gap-4">
                   <div className="flex-shrink-0">
-                    <img
+                    <Image
                       src={award.image}
                       alt={award.title}
+                      width={400}
+                      height={300}
                       className="w-full h-40 sm:h-48 object-cover rounded-lg"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      placeholder="blur"
+                      blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                     />
                   </div>
                   <div className="flex-1">

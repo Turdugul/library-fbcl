@@ -1,6 +1,6 @@
 'use client'
 
-import { FormBuilder } from '@/components/form'
+import LazyFormBuilder from '@/components/lazy/LazyFormBuilder'
 import { contactFormConfig } from '@/formConfigs/contactFormConfig'
 
 export default function ContactPage() {
@@ -9,7 +9,7 @@ export default function ContactPage() {
     await new Promise(resolve => setTimeout(resolve, 1500))
     
     // Here you would typically send the data to your backend or form service
-    console.log('Contact form data:', formData)
+    // TODO: Implement actual form submission to backend
   }
 
   return (
@@ -37,7 +37,7 @@ export default function ContactPage() {
               </p>
             </div>
             
-            <FormBuilder
+            <LazyFormBuilder
               config={contactFormConfig}
               onSubmit={handleSubmit}
             />

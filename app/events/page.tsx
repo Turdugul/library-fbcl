@@ -1,12 +1,29 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Calendar, Clock, MapPin, Users, ArrowRight, Star, Quote } from 'lucide-react'
 import { Button, Card, Input, Gallery } from '@/components/ui'
 import { upcomingEvents, pastEvents, eventsGalleryImages } from '@/lib/data'
+import { getEvents } from '@/lib/data-fetching'
 
 export const metadata: Metadata = {
   title: 'Events',
   description: 'Discover upcoming events and programs at the Friern Barnet Community Library. From story time to author readings, there\'s something for everyone.',
+}
+
+// This page uses ISR - revalidate every hour (3600 seconds)
+export const revalidate = 3600
+
+// Fetch events data at build time and revalidate
+async function getEventsData() {
+  try {
+    const events = await getEvents()
+    return events
+  } catch (error) {
+    console.error('Failed to fetch events:', error)
+    // Fallback to static data
+    return upcomingEvents
+  }
 }
 
 
@@ -24,7 +41,9 @@ const featuredEvent = {
 
 const categories = ['All', 'Reading Program', 'Author Event', 'Children', 'Book Club', 'Workshop', 'Teen Program']
 
-export default function EventsPage() {
+export default async function EventsPage() {
+  // Fetch events data using ISR
+  const events = await getEventsData()
   return (
     <div className="pt-16">
       {/* Hero Section */}
@@ -125,7 +144,7 @@ export default function EventsPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {upcomingEvents.map((event, index) => (
+            {events.map((event, index) => (
               <Card
                 key={event.id}
                 className="animate-fade-in hover-lift p-4 sm:p-6"
@@ -137,10 +156,15 @@ export default function EventsPage() {
                   ))}
                 </div>
                 
-                <img
+                <Image
                   src={event.image}
                   alt={event.title}
+                  width={400}
+                  height={300}
                   className="w-full h-40 sm:h-48 object-cover rounded-lg mb-3 sm:mb-4"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
                 />
                 
                 <div className="flex items-center gap-2 mb-2 sm:mb-3">

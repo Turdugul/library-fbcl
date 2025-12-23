@@ -3,6 +3,7 @@ import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import ScrollToTop from '@/components/ui/ScrollToTop'
+import PerformanceMonitor from '@/components/performance/PerformanceMonitor'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://fbcl.org'),
@@ -107,10 +108,15 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/logo1.png' },
+      { url: '/logo13.png', type: 'image/png' },
+      { url: '/logo13.png', sizes: '32x32', type: 'image/png' },
+      { url: '/logo13.png', sizes: '16x16', type: 'image/png' },
     ],
     apple: [
-      { url: '/logo1.png', sizes: '180x180', type: 'image/png' },
+      { url: '/logo13.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: [
+      { url: '/logo13.png', type: 'image/png' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -144,11 +150,44 @@ export default function RootLayout({
   return (
     <html lang="en-GB" className="scroll-smooth">
       <head>
-        {/* Preconnect to external domains for performance */}
+        {/* Optimized font loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+        
+        {/* Preload critical fonts */}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          as="style"
+        />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+          as="style"
+        />
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+          as="style"
+        />
+        
+        {/* Fallback for non-JS users */}
+        <noscript>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+            rel="stylesheet"
+          />
+        </noscript>
         
         {/* Structured Data */}
         <script
@@ -161,7 +200,7 @@ export default function RootLayout({
               "alternateName": "FBCL",
               "description": "A community library serving the Friern Barnet area of London",
               "url": "https://fbcl.org",
-              "logo": "https://fbcl.org/logo.png",
+              "logo": "https://fbcl.org/logo13.png",
               "image": "https://fbcl.org/library-image.jpg",
               "address": {
                 "@type": "PostalAddress",
@@ -233,7 +272,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "Friends of the Friern Barnet Community Library",
               "url": "https://fbcl.org",
-              "logo": "https://fbcl.org/logo.png",
+              "logo": "https://fbcl.org/logo13.png",
               "description": "Supporting literacy and community engagement through the Friern Barnet Community Library",
               "foundingDate": "2013",
               "numberOfEmployees": "50+",
@@ -265,6 +304,7 @@ export default function RootLayout({
           <Footer />
         </div>
         <ScrollToTop />
+        <PerformanceMonitor />
       </body>
     </html>
   )

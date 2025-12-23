@@ -377,9 +377,8 @@ export function MembershipForms() {
           <FormBuilder 
             config={adultFormConfig} 
             onSubmit={async (formData) => {
-              console.log('Adult form submitted:', formData)
               // Here you would typically send the data to your backend
-              // For now, we'll just log it
+              // TODO: Implement actual form submission to backend
             }}
           />
           </div>
@@ -401,9 +400,8 @@ export function MembershipForms() {
           <FormBuilder 
             config={youthFormConfig} 
             onSubmit={async (formData) => {
-              console.log('Youth form submitted:', formData)
               // Here you would typically send the data to your backend
-              // For now, we'll just log it
+              // TODO: Implement actual form submission to backend
             }}
           />
           </div>

@@ -1,6 +1,6 @@
 'use client'
 
-import { FormBuilder } from '@/components/form'
+import LazyFormBuilder from '@/components/lazy/LazyFormBuilder'
 import { volunteerFormConfig } from '@/formConfigs/volunteerFormConfig'
 
 export default function VolunteerApplyPage() {
@@ -9,14 +9,14 @@ export default function VolunteerApplyPage() {
       await new Promise(resolve => setTimeout(resolve, 2000))
       
       // Here you would typically send the data to your backend or form service
-      console.log('Form data:', formData)
+      // TODO: Implement actual form submission to backend
   }
 
   return (
     <section className="section-padding bg-cyan-100">
         <div className="container-custom mt-16">
         <div className='max-w-2xl m-auto'>
-    <FormBuilder
+    <LazyFormBuilder
       config={volunteerFormConfig}
       onSubmit={handleSubmit}
     />
